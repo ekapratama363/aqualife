@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RO Drinking Water - Aqualife</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons for UI elements -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+        }
+        .section-title {
+            font-size: 2.25rem; /* 36px */
+            font-weight: 800;
+            color: #111827; /* Dark Gray */
+        }
+        .blue-btn {
+             background-color: #3B82F6; /* Blue-500 */
+             color: white;
+             padding: 0.75rem 2rem;
+             border-radius: 0.5rem;
+             font-weight: 600;
+             transition: background-color 0.3s ease;
+        }
+        .blue-btn:hover {
+            background-color: #2563EB; /* Blue-600 */
+        }
+        .outline-btn {
+             background-color: white;
+             color: #3B82F6;
+             border: 1px solid #3B82F6;
+             padding: 0.75rem 2rem;
+             border-radius: 0.5rem;
+             font-weight: 600;
+             transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .outline-btn:hover {
+             background-color: #EFF6FF; /* Blue-50 */
+        }
+        
+        .tab-nav a {
+            transition: all 0.3s ease;
+            color: #6B7280; /* gray-500 */
+        }
+        .tab-nav a.active {
+            background-color: #3B82F6; /* blue-500 */
+            color: white;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        
+        .sticky-tabs-container {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 80px; 
+            z-index: 40;
+            margin-top: -4rem;
+            height: 80px;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Header Section -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html">
+                    <img src="assets/LOGO AQUALIFE/png5.png" alt="Aqualife Logo" class="h-12 w-auto">
+                </a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="water-treatment.html" class="text-gray-600 hover:text-blue-600 font-medium">Water Treatment Plant</a>
+                    <a href="water-softener.html" class="text-gray-600 hover:text-blue-600 font-medium">Water Softener</a>
+                    <a href="drinking-water.html" class="text-blue-600 hover:text-blue-700 font-bold">RO-Drinking Water</a>
+                </nav>
+                <div class="hidden md:flex items-center">
+                    <div class="relative">
+                        <input type="text" placeholder="Search" class="bg-gray-100 border border-gray-300 rounded-full py-2 pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <button class="absolute inset-y-0 right-0 flex items-center pr-3">
+                            <i data-feather="search" class="h-5 w-5 text-gray-400"></i>
+                        </button>
+                    </div>
+                </div>
+                 <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+                        <i data-feather="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-screen bg-cover bg-center" style="background-image: url('assets/PICTURE RO PAGE/A.jpg');">
+            <div class="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-transparent"></div>
+            <div class="relative container mx-auto px-6 h-full flex flex-col justify-center">
+                <div class="w-full lg:w-1/2">
+                    <h3 class="text-sm font-bold tracking-wider uppercase text-blue-600">Aqualife Reverse Osmosis System</h3>
+                    <h1 class="text-4xl lg:text-5xl font-extrabold mt-2 leading-tight text-blue-600">Quality You Can Taste</h1>
+                    <p class="mt-4 text-lg text-gray-700 max-w-xl">
+                        Aqualife's advanced Reverse Osmosis (RO) system removes up to 99% of bacteria, viruses, chlorine, and heavy metals—delivering crystal-clear, great-tasting water on demand.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sticky Tabs Container -->
+        <div class="sticky-tabs-container">
+            <div class="container mx-auto px-6">
+                <div class="bg-white rounded-full shadow-lg p-2 inline-flex items-center space-x-1 tab-nav">
+                    <a href="#overview-section" class="tab active py-2 px-6 rounded-full font-medium">Overview</a>
+                    <a href="#product-section" class="tab py-2 px-6 rounded-full font-medium">Our Product</a>
+                    <a href="#benefits-section" class="tab py-2 px-6 rounded-full font-medium">Benefits</a>
+                    <a href="#our-treatment-system" class="tab py-2 px-6 rounded-full font-medium">Our Treatment System</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Overview Section -->
+        <section id="overview-section" class="container mx-auto px-6 pt-20">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800">FAQ: Is RO Water Safe?</h3>
+                    <p class="mt-4 text-gray-600">Yes our semi permeable membranes remove 99% of dissolved solids and harmful pathogens. The result is pure, refreshing water that s safe for daily drinking</p>
+                </div>
+                <div>
+                     <img src="assets/PICTURE RO PAGE/B.png" class="rounded-lg shadow-lg" alt="Wanita melihat segelas air keruh">
+                </div>
+            </div>
+            <div class="text-center mt-20">
+                <h2 class="text-4xl font-bold text-blue-600">How Reverse Osmosis Transforms Contaminated Water Into Purity</h2>
+                <img src="assets/PICTURE RO PAGE/C.png" onerror="this.onerror=null;this.src='https://placehold.co/1200x500/F3F4F6/9CA3AF?text=RO+Process+Diagram';" alt="Reverse Osmosis Process Diagram" class="mx-auto mt-8 rounded-lg shadow-md">
+                <p class="mt-8 max-w-4xl mx-auto text-gray-600">
+                    As water enters the pipe, it carries impurities such as bacteria, viruses, and particles. The membrane acts as a barrier, allowing only clean water molecules to pass through, while trapping contaminants and pollutants. This process ensures that the water exiting the system is filtered and safe to use, effectively removing various pollutants and producing clear, clean water.
+                </p>
+            </div>
+        </section>
+
+        <!-- Our Products Section -->
+        <section id="product-section" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                     <h2 class="text-3xl font-bold text-gray-800">Not just water filtration, but a healthier future.</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <a href="onyx.html" class="block relative rounded-2xl overflow-hidden h-[700px] shadow-xl group text-white">
+                        <img src="assets/PICTURE RO PAGE/S.jpg" class="absolute w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out" alt="Onyx Water Dispenser">
+                        <div class="absolute bottom-0 left-0 right-0 h-3/5 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="relative h-full flex flex-col justify-end items-center text-center p-8">
+                            <h3 class="text-3xl font-bold">ONYX WATER DISPENCER</h3>
+                            <p class="mt-2 text-sm max-w-md">The Onyx Water Dispenser is the perfect solution for a fast paced and health conscious lifestyle. Equipped with advanced filtration technology and four temperature options cold, room temperature, warm, and hot it lets you enjoy pure, clean water in seconds.</p>
+                        </div>
+                    </a>
+                     <a href="aquilla.html" class="block relative rounded-2xl overflow-hidden h-[700px] shadow-xl group text-white">
+                        <img src="assets/PICTURE RO PAGE/T.png" class="absolute w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out" alt="Aquilla 500G">
+                        <div class="absolute bottom-0 left-0 right-0 h-3/5 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="relative h-full flex flex-col justify-end items-center text-center p-8">
+                            <h3 class="text-3xl font-bold">AQUILLA 500G</h3>
+                            <p class="mt-2 text-sm max-w-md">The Onyx Water Dispenser is the perfect solution for a fast paced and health conscious lifestyle. Equipped with advanced filtration technology and four temperature options cold, room temperature, warm, and hot it lets you enjoy pure, clean water in seconds.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section id="benefits-section" class="container mx-auto px-6 py-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-blue-600">Benefits of Using a Reverse Osmosis System</h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-8 text-center">
+                <div class="flex flex-col items-center">
+                    <img src="assets/PICTURE RO PAGE/F.jpg" alt="99% Contaminant Removal" class="rounded-full w-32 h-32 object-cover shadow-lg">
+                    <h3 class="font-bold text-lg mt-4">99% Contaminant Removal</h3>
+                    <p class="text-gray-600 text-sm mt-1">Eliminates bacteria, viruses, chlorine and heavy metals.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="assets/PICTURE RO PAGE/G.jpg" alt="Better Taste & Odor-Free" class="rounded-full w-32 h-32 object-cover shadow-lg">
+                    <h3 class="font-bold text-lg mt-4">Better Taste & Odor-Free</h3>
+                    <p class="text-gray-600 text-sm mt-1">Filters out unpleasant flavors and smells.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="assets/PICTURE RO PAGE/H.png" alt="Health & Hydration" class="rounded-full w-32 h-32 object-cover shadow-lg">
+                    <h3 class="font-bold text-lg mt-4">Health & Hydration </h3>
+                    <p class="text-gray-600 text-sm mt-1">Supports overall well-being with pure drinking water.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="assets/PICTURE RO PAGE/I.jpg" alt="Compact, Modern Design" class="rounded-full w-32 h-32 object-cover shadow-lg">
+                    <h3 class="font-bold text-lg mt-4">Compact, Modern Design </h3>
+                    <p class="text-gray-600 text-sm mt-1">Fits seamlessly under sinks or on countertops.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="assets/PICTURE RO PAGE/J.jpg" alt="Cost-Effective & Eco-Friendly" class="rounded-full w-32 h-32 object-cover shadow-lg">
+                    <h3 class="font-bold text-lg mt-4">Cost-Effective & Eco-Friendly </h3>
+                    <p class="text-gray-600 text-sm mt-1">Reduces bottled-water expenses and plastic waste.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="assets/PICTURE RO PAGE/K.png" alt="Reliable & Easy to Use" class="rounded-full w-32 h-32 object-cover shadow-lg">
+                    <h3 class="font-bold text-lg mt-4">Reliable & Easy to Use</h3>
+                    <p class="text-gray-600 text-sm mt-1">Simple installation and hasslefree maintenance.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="assets/PICTURE RO PAGE/L.png" alt="Balanced pH & Rich in Minerals" class="rounded-full w-32 h-32 object-cover shadow-lg">
+                    <h3 class="font-bold text-lg mt-4">Balanced pH & Rich in Minerals</h3>
+                    <p class="text-gray-600 text-sm mt-1">Restores healthy calcium and magnesium for smoother taste and better hydration.</p>
+                </div>
+            </div>
+
+            <div class="mt-20 grid md:grid-cols-2 gap-8">
+                <div class="relative rounded-2xl overflow-hidden shadow-lg">
+                    <img src="assets/PICTURE RO PAGE/M.png" alt="Produk Aqualife" class="w-full h-full object-cover">
+                    <div class="absolute top-4 left-4">
+                        <h4 class="bg-blue-600 text-white text-sm font-bold py-2 px-4 rounded-md">Use Aqualife Produk</h4>
+                    </div>
+                </div>
+                <div class="relative rounded-2xl overflow-hidden shadow-lg">
+                    <img src="assets/PICTURE RO PAGE/M2.png" alt="Air Galon" class="w-full h-full object-cover">
+                    <div class="absolute top-4 left-4">
+                        <h4 class="bg-blue-600 text-white text-sm font-bold py-2 px-4 rounded-md">Use Gallon</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Why Choose Section / Our Treatment System (MODIFIED) -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-blue-600">Why Choose Aqualife RO for Drinking Water?</h2>
+                </div>
+                <!-- MODIFIED: Wrapped grid in a centered flex container to make items closer -->
+                <div class="flex justify-center">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 lg:gap-x-16 gap-y-12 text-center max-w-5xl">
+                        <div class="flex flex-col items-center">
+                            <img src="assets/PICTURE RO PAGE/N.png" alt="On Demand Purity" class="rounded-full w-48 h-48 object-cover shadow-lg mb-6">
+                            <h3 class="font-bold text-xl mb-2">On Demand Purity</h3>
+                            <!-- MODIFIED: Text updated -->
+                            <p class="text-gray-600 text-sm max-w-xs">Instant access to filtered water, no boiling, no bottles</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <img src="assets/PICTURE RO PAGE/O.png" alt="Peace Of Mind" class="rounded-full w-48 h-48 object-cover shadow-lg mb-6">
+                            <h3 class="font-bold text-xl mb-2">Peace Of Mind</h3>
+                            <!-- MODIFIED: Text updated -->
+                            <p class="text-gray-600 text-sm max-w-xs">Industry leading membrane technology for your family's health</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <img src="assets/PICTURE RO PAGE/P.png" alt="Save Money & Planet" class="rounded-full w-48 h-48 object-cover shadow-lg mb-6">
+                            <h3 class="font-bold text-xl mb-2">Save Money & Planet</h3>
+                            <!-- MODIFIED: Text updated -->
+                            <p class="text-gray-600 text-sm max-w-xs">Say goodbye to single-use plastics and high utility bills.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Find Product Section -->
+        <section id="our-treatment-system" class="py-20 bg-gray-50">
+             <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-blue-600">Find the Best RO Drinking Water for Your Needs</h2>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="border border-gray-200 rounded-2xl p-6 text-center flex flex-col h-full">
+                        <img src="assets/PICTURE RO PAGE/Q.png" alt="Onyx Water Dispenser" class="mx-auto mb-4 h-60 object-contain">
+                        <h3 class="text-2xl font-bold">Onyx Water Dispenser</h3>
+                        <a href="#" class="text-sm text-blue-600 hover:underline mb-4">Spesification</a>
+                        <div class="space-y-2 text-sm flex-grow text-left">
+                            <div class="flex justify-between border-b py-3"><span class="text-gray-600 pr-2">Tempt Options</span><span class="font-semibold text-right">Ambient/5-8°C/95°C</span></div>
+                            <div class="flex justify-between border-b py-3"><span class="text-gray-600 pr-2">Source Water Tank</span><span class="font-semibold text-right">5L</span></div>
+                            <div class="flex justify-between border-b py-3"><span class="text-gray-600 pr-2">Pure Water Tank</span><span class="font-semibold text-right">2L</span></div>
+                            <div class="flex justify-between border-b py-3"><span class="text-gray-600 pr-2">Cold Water Flow Rate</span><span class="font-semibold text-right">2.2L/Hour</span></div>
+                            <div class="flex justify-between border-b py-3"><span class="text-gray-600 pr-2">Product Size</span><span class="font-semibold text-right">500*300*450mm</span></div>
+                            <div class="flex justify-between border-b py-3"><span class="text-gray-600 pr-2">Purification Stage</span><span class="font-semibold text-right">5 Stage Purifications</span></div>
+                            <div class="flex justify-between border-b py-3"><span class="text-gray-600 pr-2">RO Membrane Spec</span><span class="font-semibold text-right">100 Gallons (1 Gallon≈3.8L)</span></div>
+                            <div class="flex justify-between border-b py-3"><span class="text-gray-600 pr-2">Aplicable Voltage</span><span class="font-semibold text-right">220/110V</span></div>
+                            <div class="flex justify-between py-3"><span class="text-gray-600 pr-2">Warranty</span><span class="font-semibold text-right">12 months</span></div>
+                        </div>
+                        <a href="#" class="blue-btn mt-6 w-full">LEARN MORE</a>
+                    </div>
+                    <div class="border border-gray-200 rounded-2xl p-6 text-center flex flex-col h-full">
+                        <img src="assets/PICTURE RO PAGE/R.png" alt="Aquilla 500G" class="mx-auto mb-4 h-60 object-contain">
+                        <h3 class="text-2xl font-bold">Aquilla 500G</h3>
+                        <a href="#" class="text-sm text-blue-600 hover:underline mb-4">Spesification</a>
+                        <div class="space-y-2 text-sm flex-grow text-left">
+                            <div class="flex justify-between border-b py-3"><span class="text-gray-600 pr-2">Applicable Water Quality</span><span class="font-semibold text-right">Tap Water</span></div>
+                            <div class="flex justify-between border-b py-3"><span class="text-gray-600 pr-2">Product Size</span><span class="font-semibold text-right">138mm*400mm*328mm</span></div>
+                            <div class="flex justify-between border-b py-3"><span class="text-gray-600 pr-2">Rated Voltage</span><span class="font-semibold text-right">24V</span></div>
+                            <div class="flex justify-between border-b py-3"><span class="text-gray-600 pr-2">Power Value</span><span class="font-semibold text-right">60 Watt</span></div>
+                            <div class="flex justify-between border-b py-3"><span class="text-gray-600 pr-2">Applicable Water Temperature</span><span class="font-semibold text-right">1.3 L/Menit</span></div>
+                            <div class="flex justify-between border-b py-3"><span class="text-gray-600 pr-2">Water Inlet Pressure</span><span class="font-semibold text-right">0.1-0.4 Mpa</span></div>
+                            <div class="flex justify-between border-b py-3"><span class="text-gray-600 pr-2">Work Pressure</span><span class="font-semibold text-right">0.4-0.6 Mpa</span></div>
+                            <div class="flex justify-between border-b py-3"><span class="text-gray-600 pr-2">Purified Water Flow</span><span class="font-semibold text-right">5°C-38°C</span></div>
+                            <div class="flex justify-between py-3"><span class="text-gray-600 pr-2">Warranty</span><span class="font-semibold text-right">12 months</span></div>
+                        </div>
+                        <a href="#" class="outline-btn mt-6 w-full">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0B112B] text-white">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <div class="lg:col-span-3">
+                     <img src="assets/LOGO AQUALIFE/png5.png" alt="Aqualife Logo White" class="h-14 w-auto brightness-0 invert">
+                </div>
+                <div class="lg:col-span-2">
+                     <h4 class="font-bold tracking-wider mb-4 pb-2 border-b-2 border-slate-700 inline-block">PRODUCT</h4>
+                    <ul class="space-y-3 mt-4 text-gray-300">
+                        <li><a href="water-treatment.html" class="hover:text-white transition-colors">Water Treatment Plant</a></li>
+                        <li><a href="water-softener.html" class="hover:text-white transition-colors">Water Softener</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Water Purifier RO Drinking Water</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">UV Sterilization</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-2">
+                    <h4 class="font-bold tracking-wider mb-4 pb-2 border-b-2 border-slate-700 inline-block">AQUALIFE</h4>
+                    <ul class="space-y-3 mt-4 text-gray-300">
+                        <li><a href="index.html#about" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Why Aqualife</a></li>
+                        <li><a href="index.html#contact" class="hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                 <div class="lg:col-span-5">
+                    <h4 class="font-bold tracking-wider mb-4 pb-2 border-b-2 border-slate-700 inline-block">FOLLOW US ON SOCIAL MEDIA!</h4>
+                     <div class="flex space-x-3 mt-4">
+                         <a href="#" class="text-gray-300 hover:text-white border border-slate-600 rounded-full p-2 transition-colors"><i data-feather="instagram" class="h-5 w-5"></i></a>
+                         <a href="#" class="text-gray-300 hover:text-white border border-slate-600 rounded-full p-2 transition-colors"><i data-feather="facebook" class="h-5 w-5"></i></a>
+                         <a href="#" class="text-gray-300 hover:text-white border border-slate-600 rounded-full p-2 transition-colors"><i data-feather="message-circle" class="h-5 w-5"></i></a>
+                     </div>
+                    <p class="text-gray-400 text-sm my-4">Sign up to unlock 5% off your first order and be the first to learn about exclusive discounts and new products.</p>
+                    <form>
+                        <div class="flex border border-slate-600 focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500 transition-all">
+                            <input type="email" placeholder="Enter Your Email" class="w-full bg-transparent text-white px-4 py-2 focus:outline-none">
+                            <button class="bg-[#1E293B] hover:bg-blue-600 text-white px-6 py-2 font-semibold transition-colors">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 mt-12 pt-6 text-left text-gray-500 text-sm">
+                <p>&copy; 2025, Aqualife IDN. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Floating Chat Button -->
+    <div class="fixed bottom-5 right-5 z-50">
+        <button class="bg-blue-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition">
+            <i data-feather="message-square" class="h-7 w-7"></i>
+        </button>
+    </div>
+
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        if (mobileMenuButton) {
+            const mobileMenu = document.querySelector('header nav');
+            mobileMenuButton.addEventListener('click', () => {
+                if(mobileMenu) mobileMenu.classList.toggle('hidden');
+            });
+        }
+        
+        // --- Sticky Tabs & Smooth Scrolling Logic ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('header');
+            const tabsContainer = document.querySelector('.sticky-tabs-container');
+            const tabs = document.querySelectorAll('.tab-nav a');
+            // Select sections that are direct children of main and have an ID
+            const sections = document.querySelectorAll('main > section[id]');
+
+            if (!header || !tabsContainer || tabs.length === 0 || sections.length === 0) {
+                console.error('Required elements for sticky navigation not found.');
+                return;
+            }
+
+            // Dynamically set the 'top' position for the sticky container based on header height
+            const headerHeight = header.offsetHeight;
+            tabsContainer.style.top = `${headerHeight}px`;
+            
+            const stickyNavHeight = tabsContainer.offsetHeight;
+            const scrollOffset = headerHeight + stickyNavHeight;
+
+            // --- CLICK HANDLER ---
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // 1. Update active class on tabs immediately
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // 2. Scroll to the target section
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        // Calculate position, subtracting the height of the header and the sticky nav bar
+                        const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - scrollOffset;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // --- SCROLL HANDLER ---
+            // Updates the active tab as the user scrolls
+            const onScroll = () => {
+                const scrollPosition = window.scrollY;
+
+                sections.forEach(sec => {
+                    // Check if the section is within the viewport, considering the offset
+                    if (sec.offsetTop - scrollOffset <= scrollPosition && 
+                        sec.offsetTop + sec.offsetHeight - scrollOffset > scrollPosition) {
+                        
+                        // Remove active class from all tabs
+                        tabs.forEach(t => t.classList.remove('active'));
+                        
+                        // Add active class to the corresponding tab
+                        const correspondingTab = document.querySelector(`.tab-nav a[href="#${sec.id}"]`);
+                        if (correspondingTab) {
+                            correspondingTab.classList.add('active');
+                        }
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', onScroll);
+        });
+    </script>
+</body>
+</html>

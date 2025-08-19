@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onyx Water Dispenser - Aqualife</title>
+    
+    <!-- Memuat Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Menggunakan Font Inter dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Memuat Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            /* Mencegah scroll horizontal yang tidak diinginkan pada body */
+            overflow-x: hidden;
+        }
+        .outline-btn {
+            background-color: transparent;
+            color: #3B82F6;
+            border: 2px solid #3B82F6;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px; /* Pill shape */
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        .outline-btn:hover {
+            background-color: #3B82F6;
+            color: white;
+        }
+        
+        /* -- STYLES UNTUK HORIZONTAL SCROLL -- */
+        #features-wrapper {
+            position: relative;
+            background-color: #fff;
+        }
+
+        .sticky-container {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .horizontal-scroll {
+            display: flex;
+            height: auto;
+            align-items: center;
+            width: max-content;
+            gap: 2.5rem; /* Jarak antar kartu */
+            padding: 0 5vw; /* Padding di awal dan akhir scroll */
+        }
+
+        /* Styling untuk setiap kartu fitur (MODIFIED) */
+        .feature-card {
+            flex-shrink: 0;
+            width: 80vw;
+            max-width: 1000px;
+            height: auto; /* Tinggi kartu akan menyesuaikan gambar */
+            position: relative;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Header Section -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#">
+                    <img src="assets/LOGO AQUALIFE/png5.png" alt="Aqualife Logo" class="h-12 w-auto">
+                </a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="water-treatment.html" class="text-gray-600 hover:text-blue-600 font-medium">Water Treatment Plant</a>
+                    <a href="water-softener.html" class="text-gray-600 hover:text-blue-600 font-medium">Water Softener</a>
+                    <a href="drinking-water.html" class="text-blue-600 hover:text-blue-700 font-bold">RO-Drinking Water</a>
+                </nav>
+                <div class="hidden md:flex items-center">
+                    <div class="relative">
+                        <input type="text" placeholder="Search" class="bg-gray-100 border border-gray-300 rounded-full py-2 pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <button class="absolute inset-y-0 right-0 flex items-center pr-3">
+                            <i data-feather="search" class="h-5 w-5 text-gray-400"></i>
+                        </button>
+                    </div>
+                </div>
+                 <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+                        <i data-feather="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Banner Section (Full Page) -->
+        <section class="min-h-screen flex flex-col justify-center bg-white py-12">
+            <div class="container mx-auto px-6">
+                <!-- Breadcrumb dipindahkan ke sini -->
+                <div class="flex items-center text-sm text-gray-500 mb-8">
+                    <a href="index.html" class="hover:text-blue-600">Home</a>
+                    <i data-feather="chevron-right" class="h-4 w-4 mx-1"></i>
+                    <a href="drinking-water.html" class="hover:text-blue-600">RO Drinking Water</a>
+                    <i data-feather="chevron-right" class="h-4 w-4 mx-1"></i>
+                    <span>Onyx Water Dispenser</span>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div class="text-center lg:text-left">
+                        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 tracking-tight">ONYX WATER DISPENSER</h1>
+                        <p class="mt-4 text-lg text-gray-600 max-w-md mx-auto lg:mx-0">
+                            Pure, filtered water with four temperature settings at the touch of a button.
+                        </p>
+                        <div class="mt-8">
+                            <a href="#features-wrapper" class="outline-btn !rounded-full inline-block">Explore Onyx!</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <img src="assets/PICTURE ONYX WATER DISPENSER PAGE/A.png" alt="Onyx Water Dispenser" class="max-w-sm md:max-w-md lg:max-w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section (Horizontal Scroll) (MODIFIED) -->
+        <section id="features-wrapper">
+            <div class="sticky-container">
+                <h2 class="text-4xl font-bold text-center text-gray-800 px-6 pb-10">Catch the highlight.</h2>
+                
+                <div class="horizontal-scroll">
+                    <!-- Slide 1: Smart LED -->
+                    <div class="feature-card">
+                        <div class="absolute z-10 top-1/2 -translate-y-1/2 right-8 md:right-12 lg:right-16 w-full max-w-sm text-right">
+                            <h3 class="text-3xl md:text-4xl font-bold text-gray-800">Smart LED & TDS Display</h3>
+                            <p class="mt-4 text-md md:text-lg text-gray-600">Real-time TDS monitoring ensures water purity at every stage of filtration.</p>
+                        </div>
+                        <img src="assets/PICTURE ONYX WATER DISPENSER PAGE/B.png" alt="Smart LED & TDS Display" class="rounded-2xl w-full h-auto">
+                    </div>
+                    <!-- Slide 2: Adaptable Water Supply -->
+                    <div class="feature-card">
+                         <div class="absolute z-10 top-1/2 -translate-y-1/2 left-8 md:left-12 lg:left-16 w-full max-w-sm">
+                            <h3 class="text-3xl md:text-4xl font-bold text-gray-800">Adaptable Water Supply</h3>
+                            <p class="mt-4 text-md md:text-lg text-gray-600">Easily switch between standalone tank mode or direct tap connection for unmatched convenience and flexibility.</p>
+                            <img src="assets/PICTURE ONYX WATER DISPENSER PAGE/E.png" alt="Water Supply Modes" class="mt-8 max-w-xs w-full">
+                        </div>
+                        <img src="assets/PICTURE ONYX WATER DISPENSER PAGE/D.png" alt="Adaptable Water Supply" class="rounded-2xl w-full h-auto">
+                    </div>
+                    <!-- Slide 3: Compressor Cooling System -->
+                    <div class="feature-card">
+                        <div class="absolute z-10 top-1/2 -translate-y-1/2 right-8 md:right-12 lg:right-16 w-full max-w-sm text-right">
+                            <h3 class="text-3xl md:text-4xl font-bold text-gray-800">Compressor Cooling System</h3>
+                            <p class="mt-4 text-md md:text-lg text-gray-600">Enjoy water with an ideal temperature of 5-8°C thanks to Compressor Cooling System technology providing comfort for you and your family.</p>
+                        </div>
+                        <img src="assets/PICTURE ONYX WATER DISPENSER PAGE/F.png" alt="Compressor Cooling System" class="rounded-2xl w-full h-auto">
+                    </div>
+                    <!-- Slide 4: 5s Instant Heat -->
+                    <div class="feature-card">
+                       <div class="absolute z-10 top-1/2 -translate-y-1/2 left-8 md:left-12 lg:left-16 w-full max-w-sm">
+                            <h3 class="text-3xl md:text-4xl font-bold text-gray-800">5s Instant Heat</h3>
+                            <p class="mt-4 text-md md:text-lg text-gray-600">Enjoy hot water in just 5 seconds, perfect for your favorite hot beverages without the wait.</p>
+                        </div>
+                        <img src="assets/PICTURE ONYX WATER DISPENSER PAGE/L.png" alt="5s Instant Heat" class="rounded-2xl w-full h-auto">
+                    </div>
+                    <!-- Slide 5: High Flux RO Membrane -->
+                    <div class="feature-card">
+                        <div class="absolute z-10 top-1/2 -translate-y-1/2 left-8 md:left-12 lg:left-16 w-full max-w-sm">
+                            <h3 class="text-3xl md:text-4xl font-bold text-gray-800">High Flux RO Membrane</h3>
+                            <p class="mt-4 text-md md:text-lg text-gray-600">The high efficiency RO membrane provides pure water free from harmful contaminants ensuring health and safety for your entire family.</p>
+                        </div>
+                        <img src="assets/PICTURE ONYX WATER DISPENSER PAGE/N.png" alt="High Flux RO Membrane" class="rounded-2xl w-full h-auto">
+                    </div>
+                </div>
+                <!-- Progress Bar -->
+                <div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-1/3 max-w-xs h-1.5 bg-gray-300 rounded-full">
+                    <div id="progress-bar" class="h-full bg-gray-800 rounded-full transition-all duration-100 ease-linear"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-gray-800 text-white p-8 rounded-2xl text-center shadow-lg">
+                        <p class="text-lg">"Love the Onyx Water Dispenser! It fits perfectly in my kitchen and provides fresh, clean water. Easy to use and energy-efficient."</p>
+                        <p class="mt-6 font-bold text-xl">- MHW</p>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="bg-gray-800 text-white p-8 rounded-2xl text-center shadow-lg">
+                        <p class="text-lg">"The Onyx Water Dispenser is sleek, practical, and keeps water fresh. Perfect for my busy lifestyle!"</p>
+                        <p class="mt-6 font-bold text-xl">- AYP</p>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="bg-gray-800 text-white p-8 rounded-2xl text-center shadow-lg">
+                        <p class="text-lg">"I trust the Onyx for my family's health. It's simple, easy to use, and gives clean water every time."</p>
+                        <p class="mt-6 font-bold text-xl">- TP</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5 Stage Filtration Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-left">
+                        <h2 class="text-4xl font-bold text-gray-800">5 Stage Filtration System</h2>
+                        <p class="mt-4 text-gray-600">Each filtration stage removes impurities enhancing water quality for pure refreshing drinking water. Onyx also restores essential minerals, delivering clean healthy, and great tasting water.</p>
+                    </div>
+                    <div>
+                        <img src="assets/PICTURE ONYX WATER DISPENSER PAGE/I.png" alt="5 Stage Filtration Diagram" class="rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UV Sterilization Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img src="assets/PICTURE ONYX WATER DISPENSER PAGE/J.png" alt="UV Sterilization in action" class="rounded-lg shadow-lg">
+                    </div>
+                    <div class="text-left">
+                        <h2 class="text-4xl font-bold text-gray-800">UV Sterilization</h2>
+                        <p class="mt-4 text-gray-600">A cutting-edge technology that effectively eliminates harmful bacteria and viruses from your water. By using ultraviolet light, this process disrupts the DNA of microorganisms, rendering them inactive and unable to reproduce.</p>
+                        <p class="mt-4 text-sm text-blue-600">*Built in UV-C lamp for 24h disinfection and sterilization of the water and tank</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4 Temperature Options Section (Revised Layout) -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-12">Just click, you get it</h2>
+                </div>
+                <!-- Container utama dengan posisi relatif -->
+                <div class="relative rounded-2xl shadow-xl overflow-hidden">
+                    <!-- Gambar sebagai elemen utama -->
+                    <img src="assets/PICTURE ONYX WATER DISPENSER PAGE/P.png" alt="Onyx dispenser panel" class="w-full h-auto">
+                    
+                    <!-- Kontainer teks dengan posisi absolut -->
+                    <div class="absolute top-0 right-0 h-full w-full md:w-1/2 flex flex-col justify-center items-start text-left p-8 md:p-16">
+                        <h3 class="text-3xl md:text-4xl font-bold text-gray-800">4 Temperature Options</h3>
+                        <p class="text-gray-600 mt-4 text-lg">
+                            <span class="font-bold text-blue-500">Cold</span>, 
+                            <span class="font-bold text-green-500">Ambient</span>, 
+                            <span class="font-bold text-yellow-500">Warm</span>, 
+                            <span class="font-bold text-red-500">Hot</span>.
+                        </p>
+                        <p class="text-gray-500 mt-2">Whatever you want, just click in an instant.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Child Lock Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-gray-800">Ensuring Safety for Your Family</h2>
+                <h3 class="text-2xl font-semibold text-gray-600 mt-2">Onyx Water Dispenser with Child Lock Feature</h3>
+                <div class="flex justify-center my-8">
+                    <!-- Ukuran gambar diperbesar -->
+                    <img src="assets/PICTURE ONYX WATER DISPENSER PAGE/Q.png" alt="Child Lock Shield" class="h-72">
+                </div>
+                <p class="max-w-3xl mx-auto text-gray-600">Onyx Water Dispenser comes with a Child Lock feature specially designed to protect your family. This feature prevents unwanted access, especially by children, by automatically locking the water dispensing button. As a result, you can enjoy the convenience of using the water dispenser without worrying about potential accidents, providing extra safety for every family member.</p>
+            </div>
+        </section>
+
+        <!-- Instant Hydration Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-gray-800">Instant Hydration, Endless Purity</h2>
+                <h3 class="text-2xl font-semibold text-gray-600 mt-2 mb-8">Wherever You Are.</h3>
+                <!-- Ukuran gambar dibatasi dengan max-w-5xl -->
+                <img src="assets/PICTURE ONYX WATER DISPENSER PAGE/R2.png" alt="Onyx in a kitchen" class="rounded-2xl shadow-xl max-w-5xl mx-auto">
+                <p class="max-w-3xl mx-auto text-gray-600 mt-8">With the Onyx Water Dispenser, enjoy pure, refreshing water at the touch of a button, anytime and anywhere. Its advanced filtration technology ensures that every drop is free from impurities, providing you with safe and clean hydration whenever you need it. Whether at home, in the office, or on the go, Onyx brings you instant access to fresh water, ensuring convenience and purity with every sip.</p>
+            </div>
+        </section>
+
+        <!-- Ready to Embrace Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <img src="assets/PICTURE ONYX WATER DISPENSER PAGE/S.jpg" alt="Couple enjoying water" class="rounded-2xl shadow-xl w-full">
+                    </div>
+                    <div class="md:w-1/2 text-left">
+                        <h2 class="text-4xl font-bold text-gray-800">Ready to embrace a life of ease?</h2>
+                        <p class="mt-6 text-gray-600">The Onyx Water Dispenser is designed to make your life easier while paving the way for a healthier future. With its advanced features like multiple water temperature options, UV sterilization, and high-quality filtration, Onyx ensures you always have access to pure, clean water at your fingertips. Its smart technology, including the TDS display and compressor cooling system, provides both convenience and peace of mind, offering you water that’s not only refreshing but also safe.</p>
+                        <p class="mt-4 text-gray-600">Embrace a lifestyle of ease and health with Onyx, where innovation meets wellness for a brighter tomorrow.</p>
+                        <div class="mt-8">
+                            <a href="#" class="outline-btn inline-block">Purchase Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <img src="assets/PICTURE ONYX WATER DISPENSER PAGE/O.jpg" alt="Onyx dispenser on a counter" class="rounded-2xl shadow-xl w-full">
+                    </div>
+                    <div class="md:w-1/2 text-left">
+                        <h2 class="text-4xl font-bold text-gray-800">Contact us</h2>
+                        <p class="mt-4 text-gray-600">Please fill out of the form below and someone will get in touch with you shortly</p>
+                        <form class="mt-8 space-y-4">
+                            <div>
+                                <label for="name" class="sr-only">Name</label>
+                                <input type="text" name="name" id="name" placeholder="Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                             <div>
+                                <label for="phone" class="sr-only">Phone</label>
+                                <input type="tel" name="phone" id="phone" placeholder="Phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                             <div>
+                                <label for="email" class="sr-only">Email</label>
+                                <input type="email" name="email" id="email" placeholder="Email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <button type="submit" class="solid-btn w-full">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0B112B] text-white">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Column 1: Logo -->
+                <div class="lg:col-span-3">
+                     <img src="assets/LOGO AQUALIFE/png5.png" alt="Aqualife Logo White" class="h-14 w-auto brightness-0 invert">
+                </div>
+                
+                <!-- Column 2: Produk Links -->
+                <div class="lg:col-span-2">
+                     <h4 class="font-bold tracking-wider mb-4 pb-2 border-b-2 border-slate-700 inline-block">PRODUCT</h4>
+                    <ul class="space-y-3 mt-4 text-gray-300">
+                        <li><a href="water-treatment.html" class="hover:text-white transition-colors">Water Treatment Plant</a></li>
+                        <li><a href="water-softener.html" class="hover:text-white transition-colors">Water Softener</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Water Purifier RO Drinking Water</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">UV Sterilization</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3: Aqualife Links -->
+                <div class="lg:col-span-2">
+                    <h4 class="font-bold tracking-wider mb-4 pb-2 border-b-2 border-slate-700 inline-block">AQUALIFE</h4>
+                    <ul class="space-y-3 mt-4 text-gray-300">
+                        <li><a href="index.html#about" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Why Aqualife</a></li>
+                        <li><a href="index.html#contact" class="hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Social & Subscription -->
+                 <div class="lg:col-span-5">
+                    <h4 class="font-bold tracking-wider mb-4 pb-2 border-b-2 border-slate-700 inline-block">FOLLOW US ON SOCIAL MEDIA!</h4>
+                     <div class="flex space-x-3 mt-4">
+                         <a href="#" class="text-gray-300 hover:text-white border border-slate-600 rounded-full p-2 transition-colors"><i data-feather="instagram" class="h-5 w-5"></i></a>
+                         <a href="#" class="text-gray-300 hover:text-white border border-slate-600 rounded-full p-2 transition-colors"><i data-feather="facebook" class="h-5 w-5"></i></a>
+                         <a href="#" class="text-gray-300 hover:text-white border border-slate-600 rounded-full p-2 transition-colors"><i data-feather="message-circle" class="h-5 w-5"></i></a>
+                     </div>
+                    <p class="text-gray-400 text-sm my-4">Sign up to unlock 5% off your first order and be the first to learn about exclusive discounts and new products.</p>
+                    <form>
+                        <div class="flex border border-slate-600 focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500 transition-all">
+                            <input type="email" placeholder="Enter Your Email" class="w-full bg-transparent text-white px-4 py-2 focus:outline-none">
+                            <button class="bg-[#1E293B] hover:bg-blue-600 text-white px-6 py-2 font-semibold transition-colors">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 mt-12 pt-6 text-left text-gray-500 text-sm">
+                <p>&copy; 2025, Aqualife IDN. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Floating Chat Button -->
+    <div class="fixed bottom-5 right-5 z-50">
+        <button class="bg-blue-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition">
+            <i data-feather="message-square" class="h-7 w-7"></i>
+        </button>
+    </div>
+
+    <!-- Memuat GSAP & ScrollTrigger untuk animasi -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // --- LOGIC UNTUK HORIZONTAL SCROLL ---
+        gsap.registerPlugin(ScrollTrigger);
+
+        const featuresSection = document.querySelector('#features-wrapper');
+        const scrollContainer = document.querySelector('.horizontal-scroll');
+        const progressBar = document.getElementById('progress-bar');
+        
+        gsap.to(scrollContainer, {
+            x: () => -(scrollContainer.scrollWidth - document.documentElement.clientWidth),
+            ease: "none",
+            scrollTrigger: {
+                trigger: featuresSection,
+                start: "top top",
+                end: () => "+=" + (scrollContainer.scrollWidth - document.documentElement.clientWidth),
+                scrub: 1,
+                pin: true,
+                anticipatePin: 1,
+                invalidateOnRefresh: true,
+                onUpdate: (self) => {
+                    if(progressBar) {
+                        progressBar.style.width = `${self.progress * 100}%`;
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

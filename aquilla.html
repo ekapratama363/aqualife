@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquilla 500G - Aqualife</title>
+    
+    <!-- Memuat Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Menggunakan Font Inter dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Memuat Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            overflow-x: hidden;
+        }
+        .outline-btn {
+            background-color: transparent;
+            color: #3B82F6;
+            border: 2px solid #3B82F6;
+            padding: 0.75rem 2rem;
+            border-radius: 8px; 
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        .outline-btn:hover {
+            background-color: #3B82F6;
+            color: white;
+        }
+        .solid-btn {
+            background-color: #3B82F6;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+        .solid-btn:hover {
+            background-color: #2563EB;
+        }
+
+        /* -- STYLES UNTUK HORIZONTAL SCROLL -- */
+        .features-wrapper {
+            position: relative;
+            background-color: #fff;
+        }
+        .sticky-container {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .horizontal-scroll {
+            display: flex;
+            height: auto;
+            align-items: center;
+            width: max-content;
+            gap: 2.5rem; /* Jarak antar kartu */
+            padding: 0 5vw; /* Padding di awal dan akhir scroll */
+        }
+        .feature-card {
+            flex-shrink: 0;
+            width: 80vw;
+            max-width: 1000px;
+            height: auto;
+            position: relative; /* Diperlukan untuk memposisikan teks */
+        }
+        .faucet-card {
+            flex-shrink: 0;
+            width: 60vw; /* Lebar kartu lebih kecil */
+            max-width: 700px; /* Batas lebar maksimum */
+            height: auto;
+            position: relative;
+        }
+        .lifestyle-card {
+            flex-shrink: 0;
+            width: auto;
+            height: 65vh; /* Menyesuaikan tinggi kartu */
+            max-width: 1000px;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Header Section -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#">
+                    <img src="assets/LOGO AQUALIFE/png5.png" alt="Logo Aqualife" class="h-12 w-auto">
+                </a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="water-treatment.html" class="text-gray-600 hover:text-blue-600 font-medium">Water Treatment Plant</a>
+                    <a href="water-softener.html" class="text-gray-600 hover:text-blue-600 font-medium">Water Softener</a>
+                    <a href="drinking-water.html" class="text-blue-600 hover:text-blue-700 font-bold">RO-Drinking Water</a>
+                </nav>
+                <div class="hidden md:flex items-center">
+                    <div class="relative">
+                        <input type="text" placeholder="Search" class="bg-gray-100 border border-gray-300 rounded-full py-2 pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <button class="absolute inset-y-0 right-0 flex items-center pr-3">
+                            <i data-feather="search" class="h-5 w-5 text-gray-400"></i>
+                        </button>
+                    </div>
+                </div>
+                 <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+                        <i data-feather="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Banner Section -->
+        <section class="min-h-screen flex flex-col justify-center bg-white py-12">
+            <div class="container mx-auto px-6">
+                <div class="flex items-center text-sm text-gray-500 mb-8">
+                    <a href="index.html" class="hover:text-blue-600">Home</a>
+                    <i data-feather="chevron-right" class="h-4 w-4 mx-1"></i>
+                    <a href="drinking-water.html" class="hover:text-blue-600">RO Drinking Water</a>
+                    <i data-feather="chevron-right" class="h-4 w-4 mx-1"></i>
+                    <span>Aquilla 500G</span>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div class="text-center lg:text-left">
+                        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 tracking-tight">AQUILLA 500G</h1>
+                        <p class="mt-4 text-lg text-blue-600 font-semibold">REVERSE OSMOSIS</p>
+                        <p class="mt-2 text-lg text-gray-600 max-w-md mx-auto lg:mx-0">
+                           Pure, Efficient, Reliable.
+                        </p>
+                        <div class="mt-8">
+                            <a href="#features-wrapper" class="outline-btn !rounded-full inline-block">Explore Aquilla!</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <img src="assets/PICTURE AQUILLA 500G PAGE/AB.png" alt="Produk Aquilla 500G" class="max-w-sm md:max-w-md lg:max-w-full rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section (Horizontal Scroll) -->
+        <section id="features-wrapper" class="features-wrapper">
+            <div class="sticky-container">
+                <h2 class="text-4xl font-bold text-center text-gray-800 px-6 pb-10">Catch the highlight.</h2>
+                <div class="horizontal-scroll">
+                    <!-- Slide 1: Efficient Water Saving -->
+                    <div class="feature-card">
+                        <div class="absolute top-8 left-1/2 -translate-x-1/2 text-center w-full z-10">
+                            <h3 class="text-3xl font-bold text-gray-800">EFFICIENT WATER SAVING</h3>
+                            <p class="text-gray-600 mt-2">Fill Your Cup Instanly With 1,3 L/min Flow Rate</p>
+                        </div>
+                        <img src="assets/PICTURE AQUILLA 500G PAGE/Q1.png" alt="Efficient Water Saving" class="rounded-2xl w-full h-auto">
+                    </div>
+                    <!-- Slide 2: Dual Water Output -->
+                    <div class="feature-card">
+                        <div class="absolute top-1/2 right-8 -translate-y-1/2 text-left w-2/5 z-10">
+                            <h3 class="text-3xl font-bold text-gray-800">DUAL WATER OUTPUT</h3>
+                            <p class="text-gray-600 mt-2">Enjoy the convenience of Dual Water Output – get clean and drinking water for all your needs, anytime!</p>
+                        </div>
+                        <img src="assets/PICTURE AQUILLA 500G PAGE/R.png" alt="Dual Water Output" class="rounded-2xl w-full h-auto">
+                    </div>
+                    <!-- Slide 3: Quick Plug and Play -->
+                    <div class="feature-card">
+                        <div class="absolute top-1/2 left-8 -translate-y-1/2 text-left w-2/5 z-10">
+                            <h3 class="text-3xl font-bold text-gray-800">QUICK PLUG AND PLAY INSTALLATION</h3>
+                            <p class="text-gray-600 mt-2">When replacing the filter, the filter can be changed directly without lifting the machine</p>
+                        </div>
+                        <img src="assets/PICTURE AQUILLA 500G PAGE/S.png" alt="Quick Plug and Play Installation" class="rounded-2xl w-full h-auto">
+                    </div>
+                </div>
+                <!-- Progress Bar -->
+                <div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-1/3 max-w-xs h-1.5 bg-gray-300 rounded-full">
+                    <div id="progress-bar" class="h-full bg-gray-800 rounded-full transition-all duration-100 ease-linear"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aquilla 500G Second to None Section (MODIFIED) -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <div class="bg-gray-100 rounded-2xl p-8 md:p-12 max-w-5xl mx-auto flex flex-col justify-between min-h-[70vh] overflow-hidden">
+                    <div class="text-center pt-8">
+                        <h2 class="text-5xl font-bold text-gray-800">Aquilla 500G</h2>
+                        <p class="mt-2 text-2xl text-gray-600">Second to none.</p>
+                    </div>
+                    <div class="flex-grow flex items-end justify-center -mb-8">
+                        <img src="assets/PICTURE AQUILLA 500G PAGE/T.png" alt="Aquilla 500G Unit" class="max-w-md lg:max-w-lg mx-auto transform scale-110">
+                    </div>
+                </div>
+                 <p class="max-w-3xl mx-auto text-gray-600 mt-8">The Aquilla 500G water filtration system delivers exceptional performance with advanced Reverse Osmosis (RO) technology, removing contaminants like chlorine, bacteria, and heavy metals. Its sleek, compact design ensures easy filter replacement and reliable, long-lasting filtration for your home or business.</p>
+            </div>
+        </section>
+
+        <!-- Flexible Faucet Section (Horizontal Scroll) -->
+        <section id="features-wrapper-2" class="features-wrapper">
+            <div class="sticky-container">
+                <h2 class="text-4xl font-bold text-center text-gray-800 px-6 pb-4">Flexible, Easy to Use, Durable Material</h2>
+                <p class="text-lg text-center text-gray-600 px-6 mb-8">Modern Faucet Solutions for Your Daily Needs and Innovative Designs that Make Every Kitchen Activity Easier</p>
+                <div class="horizontal-scroll">
+                    <!-- Card 1: Durable 304 Stainless Steel -->
+                    <div class="faucet-card relative">
+                        <p class="absolute top-6 left-6 text-lg font-semibold text-gray-700">Durable 304 Stainless Steel</p>
+                        <img src="assets/PICTURE AQUILLA 500G PAGE/U.png" alt="Faucet terbuat dari 304 Stainless Steel" class="rounded-2xl w-full h-auto">
+                    </div>
+                    <!-- Card 2: 90° Switch -->
+                    <div class="faucet-card relative">
+                        <p class="absolute top-6 right-6 text-lg font-semibold text-gray-700 text-right">90° Switch left and right</p>
+                        <img src="assets/PICTURE AQUILLA 500G PAGE/V.png" alt="Faucet dengan saklar 90 derajat" class="rounded-2xl w-full h-auto">
+                    </div>
+                    <!-- Card 3: 360° Swivel Faucet -->
+                    <div class="faucet-card relative">
+                         <p class="absolute top-6 left-6 text-lg font-semibold text-gray-700">360° Swivel Faucet</p>
+                        <img src="assets/PICTURE AQUILLA 500G PAGE/W.png" alt="Faucet dapat berputar 360 derajat" class="rounded-2xl w-full h-auto">
+                    </div>
+                     <!-- Card 4: Fast to get fresh water -->
+                    <div class="faucet-card relative">
+                        <p class="absolute top-6 left-6 text-lg font-semibold text-gray-700">Fast to get a fresh water</p>
+                        <img src="assets/PICTURE AQUILLA 500G PAGE/X.png" alt="Air segar dengan cepat" class="rounded-2xl w-full h-auto">
+                    </div>
+                </div>
+                <!-- Progress Bar 2 -->
+                <div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-1/3 max-w-xs h-1.5 bg-gray-300 rounded-full">
+                    <div id="progress-bar-2" class="h-full bg-gray-800 rounded-full transition-all duration-100 ease-linear"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6 Stages Filtration Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-gray-800">6 Stages Filtration</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-gray-600">Ensuring the removal of harmful impurities such as chlorine, bacteria, heavy metals, and other contaminants. Each stage is designed to target specific particles, from pre-filtration to advanced post-filtration, providing you with the highest level of purity and safety.</p>
+                <img src="assets/PICTURE AQUILLA 500G PAGE/G3.png" alt="Diagram 6 tahap filtrasi" class="w-full max-w-5xl mx-auto mt-8">
+            </div>
+        </section>
+
+        <!-- Compact & Stylish Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-gray-800">Compact & Stylish</h2>
+                <p class="mt-2 text-2xl text-gray-600 mb-12">Fits neatly under any sink</p>
+                <div class="bg-gray-100 rounded-2xl p-8 md:p-12 max-w-6xl mx-auto">
+                    <img src="assets/PICTURE AQUILLA 500G PAGE/Z.png" alt="Aquilla 500G dari berbagai sudut" class="w-full h-auto">
+                </div>
+                <p class="max-w-3xl mx-auto text-gray-600 mt-8">The Aqualife 500G features a compact and elegant design, perfect for modern spaces. With an intuitive control panel and a 3-stage filtration system, it ensures clean and pure water with every use. Ideal for home or office, the Aqualife 500G combines functionality with style.</p>
+            </div>
+        </section>
+
+        <!-- Anytime to get clean water Section (Horizontal Scroll) -->
+        <section id="features-wrapper-3" class="features-wrapper">
+             <div class="sticky-container">
+                <h2 class="text-4xl font-bold text-center text-gray-800 px-6 pb-10">Anytime to get clean water</h2>
+                <div class="horizontal-scroll">
+                    <div class="lifestyle-card">
+                        <img src="assets/PICTURE AQUILLA 500G PAGE/L2.png" alt="Aquilla 500G di dapur" class="rounded-2xl w-full h-full object-cover">
+                    </div>
+                    <div class="lifestyle-card">
+                        <img src="assets/PICTURE AQUILLA 500G PAGE/M.jpg" alt="Pria minum air" class="rounded-2xl w-full h-full object-cover">
+                    </div>
+                    <div class="lifestyle-card">
+                        <img src="assets/PICTURE AQUILLA 500G PAGE/N.jpeg" alt="Memegang gelas air" class="rounded-2xl w-full h-full object-cover">
+                    </div>
+                </div>
+                <!-- Progress Bar 3 -->
+                <div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-1/3 max-w-xs h-1.5 bg-gray-300 rounded-full">
+                    <div id="progress-bar-3" class="h-full bg-gray-800 rounded-full transition-all duration-100 ease-linear"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust in Every Drop Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <img src="assets/PICTURE AQUILLA 500G PAGE/P.png" alt="Keluarga bahagia dengan air bersih" class="rounded-2xl w-full">
+                    </div>
+                    <div class="md:w-1/2 text-left">
+                        <h2 class="text-4xl font-bold text-gray-800">Aquilla 500G : Trust in Every Drop</h2>
+                        <h3 class="mt-4 text-xl font-semibold text-gray-700">500 GPD of Pure, Remineralized Water Right at Your Fingertips</h3>
+                        <p class="mt-6 text-gray-600">Aqualife’s Aquilla 500G produces up to 500 gallons of perfectly pure water every day—removing 99% of impurities, then restoring healthy calcium and magnesium for balanced pH and great taste. Say goodbye to single-use bottles, lower your utility costs, and drink with confidence, drop after drop.</p>
+                        <p class="mt-6 font-bold text-gray-800">Features :</p>
+                        <div class="mt-4 grid grid-cols-2 gap-x-8 gap-y-2 text-gray-600">
+                            <div class="flex items-center">
+                                <i data-feather="check" class="h-5 w-5 text-blue-500 mr-2"></i>
+                                <span>500 GPD Capacity</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-feather="check" class="h-5 w-5 text-blue-500 mr-2"></i>
+                                <span>Compact Design</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-feather="check" class="h-5 w-5 text-blue-500 mr-2"></i>
+                                <span>6 Stage Filtration</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-feather="check" class="h-5 w-5 text-blue-500 mr-2"></i>
+                                <span>Swivel Faucet</span>
+                            </div>
+                             <div class="flex items-center">
+                                <i data-feather="check" class="h-5 w-5 text-blue-500 mr-2"></i>
+                                <span>2:1 Pure-to-Waste</span>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <a href="#contact-us" class="outline-btn inline-block">Purchase Aquilla 500G</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section id="contact-us" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <img src="assets/PICTURE AQUILLA 500G PAGE/AA.png" alt="Aquilla 500G di dapur" class="rounded-2xl shadow-xl w-full">
+                    </div>
+                    <div class="md:w-1/2 text-left">
+                        <h2 class="text-4xl font-bold text-gray-800">Contact us</h2>
+                        <p class="mt-4 text-gray-600">Please fill out the form below and someone will get in touch with you shortly</p>
+                        <form class="mt-8 space-y-4">
+                            <div>
+                                <label for="name" class="sr-only">Name</label>
+                                <input type="text" name="name" id="name" placeholder="Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                             <div>
+                                <label for="phone" class="sr-only">Phone</label>
+                                <input type="tel" name="phone" id="phone" placeholder="Phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                             <div>
+                                <label for="email" class="sr-only">Email</label>
+                                <input type="email" name="email" id="email" placeholder="Email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <button type="submit" class="solid-btn w-full">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0B112B] text-white">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Column 1: Logo -->
+                <div class="lg:col-span-3">
+                     <img src="assets/LOGO AQUALIFE/png5.png" alt="Aqualife Logo White" class="h-14 w-auto brightness-0 invert">
+                </div>
+                
+                <!-- Column 2: Produk Links -->
+                <div class="lg:col-span-2">
+                     <h4 class="font-bold tracking-wider mb-4 pb-2 border-b-2 border-slate-700 inline-block">PRODUCT</h4>
+                    <ul class="space-y-3 mt-4 text-gray-300">
+                        <li><a href="water-treatment.html" class="hover:text-white transition-colors">Water Treatment Plant</a></li>
+                        <li><a href="water-softener.html" class="hover:text-white transition-colors">Water Softener</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Water Purifier RO Drinking Water</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">UV Sterilization</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3: Aqualife Links -->
+                <div class="lg:col-span-2">
+                    <h4 class="font-bold tracking-wider mb-4 pb-2 border-b-2 border-slate-700 inline-block">AQUALIFE</h4>
+                    <ul class="space-y-3 mt-4 text-gray-300">
+                        <li><a href="index.html#about" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Why Aqualife</a></li>
+                        <li><a href="index.html#contact" class="hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Social & Subscription -->
+                 <div class="lg:col-span-5">
+                    <h4 class="font-bold tracking-wider mb-4 pb-2 border-b-2 border-slate-700 inline-block">FOLLOW US ON SOCIAL MEDIA!</h4>
+                     <div class="flex space-x-3 mt-4">
+                         <a href="#" class="text-gray-300 hover:text-white border border-slate-600 rounded-full p-2 transition-colors"><i data-feather="instagram" class="h-5 w-5"></i></a>
+                         <a href="#" class="text-gray-300 hover:text-white border border-slate-600 rounded-full p-2 transition-colors"><i data-feather="facebook" class="h-5 w-5"></i></a>
+                         <a href="#" class="text-gray-300 hover:text-white border border-slate-600 rounded-full p-2 transition-colors"><i data-feather="message-circle" class="h-5 w-5"></i></a>
+                     </div>
+                    <p class="text-gray-400 text-sm my-4">Sign up to unlock 5% off your first order and be the first to learn about exclusive discounts and new products.</p>
+                    <form>
+                        <div class="flex border border-slate-600 focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500 transition-all">
+                            <input type="email" placeholder="Enter Your Email" class="w-full bg-transparent text-white px-4 py-2 focus:outline-none">
+                            <button class="bg-[#1E293B] hover:bg-blue-600 text-white px-6 py-2 font-semibold transition-colors">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 mt-12 pt-6 text-left text-gray-500 text-sm">
+                <p>&copy; 2025, Aqualife IDN. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Memuat GSAP & ScrollTrigger untuk animasi -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu'); 
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // --- LOGIC UNTUK HORIZONTAL SCROLL ---
+        gsap.registerPlugin(ScrollTrigger);
+
+        function setupHorizontalScroll(wrapperId, progressBarId) {
+            const featuresSection = document.querySelector(wrapperId);
+            if (!featuresSection) return;
+
+            const scrollContainer = featuresSection.querySelector('.horizontal-scroll');
+            const progressBar = featuresSection.querySelector(progressBarId);
+            
+            if (scrollContainer) {
+                gsap.to(scrollContainer, {
+                    x: () => -(scrollContainer.scrollWidth - document.documentElement.clientWidth),
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: featuresSection,
+                        start: "top top",
+                        end: () => "+=" + (scrollContainer.scrollWidth - document.documentElement.clientWidth),
+                        scrub: 1,
+                        pin: true,
+                        anticipatePin: 1,
+                        invalidateOnRefresh: true,
+                        onUpdate: (self) => {
+                            if(progressBar) {
+                                progressBar.style.width = `${self.progress * 100}%`;
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        setupHorizontalScroll('#features-wrapper', '#progress-bar');
+        setupHorizontalScroll('#features-wrapper-2', '#progress-bar-2');
+        setupHorizontalScroll('#features-wrapper-3', '#progress-bar-3');
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trending News - Aqualife</title>
+    
+    <!-- Memuat Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Menggunakan Font Inter dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Memuat Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Header Section -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html">
+                    <img src="assets/LOGO AQUALIFE/png5.png" alt="Aqualife Logo" class="h-12 w-auto">
+                </a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="water-treatment.html" class="text-gray-600 hover:text-blue-600 font-medium">Water Treatment Plant</a>
+                    <a href="water-softener.html" class="text-gray-600 hover:text-blue-600 font-medium">Water Softener</a>
+                    <a href="drinking-water.html" class="text-gray-600 hover:text-blue-600 font-medium">RO-Drinking Water</a>
+                    <a href="trending-news.html" class="text-blue-600 hover:text-blue-700 font-bold">Trending News</a>
+                </nav>
+                <div class="hidden md:flex items-center">
+                    <div class="relative">
+                        <input type="text" placeholder="Search" class="bg-gray-100 border border-gray-300 rounded-full py-2 pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <button class="absolute inset-y-0 right-0 flex items-center pr-3">
+                            <i data-feather="search" class="h-5 w-5 text-gray-400"></i>
+                        </button>
+                    </div>
+                </div>
+                 <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+                        <i data-feather="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Banner Section (MODIFIED) -->
+        <section class="relative h-[100vh] bg-cover bg-center text-white flex items-center justify-center" style="background-image: url('assets/PICTURE VIEW ALL TRENDINGS NEWS 1/A.png');">
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/50"></div>
+            <!-- Content -->
+            <div class="relative z-10 text-center px-4">
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight">Trending News</h1>
+                <p class="mt-4 text-lg md:text-xl">Regarding Clean Water • Regarding Clean Water • Regarding Clean Water</p>
+            </div>
+        </section>
+
+        <!-- News Grid Section -->
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- News Card 1 -->
+                <div class="flex flex-col bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="assets/PICTURE VIEW ALL TRENDINGS NEWS 1/J.png" alt="News 1" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">3 Hal yang Harus Dilakukan agar Water Purifier Bekerja Optimal</h3>
+                        <p class="text-gray-600 text-sm flex-grow">Penyakit tertawa dari air minum yang kita konsumsi setiap hari. Saat ini pun kesadaran terhadap kebersihan dan risiko penularan penyakit yang terbawa oleh air minum kian meningkat...</p>
+                        <a href="berita-water-purifier-optimal.html" class="mt-4 text-blue-600 hover:underline font-semibold self-start">Read More</a>
+                    </div>
+                </div>
+
+                <!-- News Card 2 -->
+                <div class="flex flex-col bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="assets/PICTURE VIEW ALL TRENDINGS NEWS 1/B.png" alt="News 2" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">4 Manfaat memiliki Water Purifier di Rumah</h3>
+                        <p class="text-gray-600 text-sm flex-grow">Air sangat penting bagi semua kehidupan makhluk hidup, dari manusia, hewan, hingga tanaman. Ada banyak hal yang dilakukan orang memenuhi kebutuhan air mereka...</p>
+                        <a href="berita-manfaat-water-purifier.html" class="mt-4 text-blue-600 hover:underline font-semibold self-start">Read More</a>
+                    </div>
+                </div>
+
+                <!-- News Card 3 -->
+                <div class="flex flex-col bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="assets/PICTURE VIEW ALL TRENDINGS NEWS 1/C.png" alt="News 3" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Kini Hadir RO Drinking Water dengan 5 tahap Filtrasi yang Canggih</h3>
+                        <p class="text-gray-600 text-sm flex-grow">Semakin mudah jika anda memiliki RO Drinking Water di rumah anda segala permasalahan air bersih bisa diatasi dengan Onyx Water Dispenser...</p>
+                        <a href="berita-ro-5-tahap-filtrasi.html" class="mt-4 text-blue-600 hover:underline font-semibold self-start">Read More</a>
+                    </div>
+                </div>
+
+                <!-- News Card 4 -->
+                <div class="flex flex-col bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="assets/PICTURE VIEW ALL TRENDINGS NEWS 1/D.jpeg" alt="News 4" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Sudah Tahu Belum? Ini 3 Perbedaan Sumur Bor dan Sumur Gali</h3>
+                        <p class="text-gray-600 text-sm flex-grow">Sumber air bersih di rumah bisa didapatkan dengan berbagai cara, salah satunya dari sumur yang mengambil air dari dalam tanah...</p>
+                        <a href="berita-perbedaan-sumur.html" class="mt-4 text-blue-600 hover:underline font-semibold self-start">Read More</a>
+                    </div>
+                </div>
+
+                <!-- News Card 5 -->
+                <div class="flex flex-col bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="assets/PICTURE VIEW ALL TRENDINGS NEWS 1/E.jpeg" alt="News 5" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Warga Gaza Masih Krisis Air Bersih</h3>
+                        <p class="text-gray-600 text-sm flex-grow">Air sangat penting bagi semua kehidupan makhluk hidup, dari manusia, hewan, hingga tanaman. Ada banyak hal yang dilakukan orang memenuhi kebutuhan air mereka...</p>
+                        <a href="berita-krisis-air-gaza.html" class="mt-4 text-blue-600 hover:underline font-semibold self-start">Read More</a>
+                    </div>
+                </div>
+
+                <!-- News Card 6 -->
+                <div class="flex flex-col bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="assets/PICTURE VIEW ALL TRENDINGS NEWS 1/F.jpeg" alt="News 6" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Adi Cipta Fokus Tangani Infrastruktur, Air Bersih, dan Sampah di Badung</h3>
+                        <p class="text-gray-600 text-sm flex-grow">Bupati dan Wakil Bupati (Wabup) Badung, I Nyoman Giri Prasta dan I Ketut Suiasa (GiriAsa), membeberkan sepuluh program prioritas...</p>
+                        <a href="berita-infrastruktur-badung.html" class="mt-4 text-blue-600 hover:underline font-semibold self-start">Read More</a>
+                    </div>
+                </div>
+
+                 <!-- News Card 7 -->
+                <div class="flex flex-col bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="assets/PICTURE VIEW ALL TRENDINGS NEWS 1/G.jpeg" alt="News 7" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Musim Kemarau 2025 Sudah Dimulai Bulan Ini, Cek Kapan Puncaknya</h3>
+                        <p class="text-gray-600 text-sm flex-grow">Musim kemarau 2025 di Indonesia telah dimulai bulan ini. Namun, musim kemarau dimulai secara bertahap di berbagai wilayah...</p>
+                        <a href="berita-musim-kemarau-2025.html" class="mt-4 text-blue-600 hover:underline font-semibold self-start">Read More</a>
+                    </div>
+                </div>
+
+                <!-- News Card 8 -->
+                <div class="flex flex-col bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="assets/PICTURE VIEW ALL TRENDINGS NEWS 1/H.jpeg" alt="News 8" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Tanda 'Kiamat', 40% Bumi Kini Daratan Kering</h3>
+                        <p class="text-gray-600 text-sm flex-grow">Menurut laporan terbaru UN Convention to Combat Desertification (UNCCD) dari PBB, banyak bagian Bumi menjadi kering secara permanen...</p>
+                        <a href="berita-bumi-kering.html" class="mt-4 text-blue-600 hover:underline font-semibold self-start">Read More</a>
+                    </div>
+                </div>
+
+                <!-- News Card 9 -->
+                <div class="flex flex-col bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="assets/PICTURE VIEW ALL TRENDINGS NEWS 1/I.jpeg" alt="News 9" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Meski Hujan Turun, 3 Kecamatan di Ciamis Masih Krisis Air Bersih</h3>
+                        <p class="text-gray-600 text-sm flex-grow">Hujan sudah turun membasahi sebagian besar wilayah Kabupaten Ciamis sejak beberapa pekan terakhir. Tapi sejumlah wilayah di Kabupaten Ciamis masih mengalami krisis air bersih...</p>
+                        <a href="berita-krisis-air-ciamis.html" class="mt-4 text-blue-600 hover:underline font-semibold self-start">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-center mt-16">
+                <a href="index.html" class="bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors">
+                    BACK HOME
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0B112B] text-white mt-16">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Column 1: Logo -->
+                <div class="lg:col-span-3">
+                     <img src="assets/LOGO AQUALIFE/png5.png" alt="Aqualife Logo White" class="h-14 w-auto brightness-0 invert">
+                </div>
+                
+                <!-- Column 2: Produk Links -->
+                <div class="lg:col-span-2">
+                     <h4 class="font-bold tracking-wider mb-4 pb-2 border-b-2 border-slate-700 inline-block">PRODUCT</h4>
+                    <ul class="space-y-3 mt-4 text-gray-300">
+                        <li><a href="water-treatment.html" class="hover:text-white transition-colors">Water Treatment Plant</a></li>
+                        <li><a href="water-softener.html" class="hover:text-white transition-colors">Water Softener</a></li>
+                        <li><a href="drinking-water.html" class="hover:text-white transition-colors">Water Purifier RO Drinking Water</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">UV Sterilization</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3: Aqualife Links -->
+                <div class="lg:col-span-2">
+                    <h4 class="font-bold tracking-wider mb-4 pb-2 border-b-2 border-slate-700 inline-block">AQUALIFE</h4>
+                    <ul class="space-y-3 mt-4 text-gray-300">
+                        <li><a href="index.html#about" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Why Aqualife</a></li>
+                        <li><a href="index.html#contact" class="hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Social & Subscription -->
+                 <div class="lg:col-span-5">
+                    <h4 class="font-bold tracking-wider mb-4 pb-2 border-b-2 border-slate-700 inline-block">FOLLOW US ON SOCIAL MEDIA!</h4>
+                     <div class="flex space-x-3 mt-4">
+                         <a href="#" class="text-gray-300 hover:text-white border border-slate-600 rounded-full p-2 transition-colors"><i data-feather="instagram" class="h-5 w-5"></i></a>
+                         <a href="#" class="text-gray-300 hover:text-white border border-slate-600 rounded-full p-2 transition-colors"><i data-feather="facebook" class="h-5 w-5"></i></a>
+                         <a href="#" class="text-gray-300 hover:text-white border border-slate-600 rounded-full p-2 transition-colors"><i data-feather="message-circle" class="h-5 w-5"></i></a>
+                     </div>
+                    <p class="text-gray-400 text-sm my-4">Sign up to unlock 5% off your first order and be the first to learn about exclusive discounts and new products.</p>
+                    <form>
+                        <div class="flex border border-slate-600 focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500 transition-all">
+                            <input type="email" placeholder="Enter Your Email" class="w-full bg-transparent text-white px-4 py-2 focus:outline-none">
+                            <button class="bg-[#1E293B] hover:bg-blue-600 text-white px-6 py-2 font-semibold transition-colors">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 mt-12 pt-6 text-left text-gray-500 text-sm">
+                <p>&copy; 2025, Aqualife IDN. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        if (mobileMenuButton) {
+            const mobileMenu = document.querySelector('header nav');
+            mobileMenuButton.addEventListener('click', () => {
+                if(mobileMenu) mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
