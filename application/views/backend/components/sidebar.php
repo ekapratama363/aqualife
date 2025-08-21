@@ -282,6 +282,12 @@
                 </div>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link menu-link <?= $seg2 == 'user' ? 'active' : '' ?>" href="<?= base_url('backend/user') ?>">
+                    <i class="bi bi-person"></i> <span data-key="t-user">User</span>
+                </a>
+            </li>
+
         </ul>
     </div>
     <!-- Sidebar -->
