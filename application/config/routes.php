@@ -57,17 +57,23 @@ $route['backend/(:any)/banner_header'] = 'backend/banner_header/index/$1';
 $route['backend/(:any)/banner_header/(:any)'] = 'backend/banner_header/$2/$1';
 $route['backend/(:any)/banner_header/(:any)/(:any)'] = 'backend/banner_header/$2/$1/$3';
 
-$route['backend/(:any)/our_service'] = 'backend/products/category/index/$1';
-$route['backend/(:any)/our_service/(:any)'] = 'backend/products/category/$2/$1';
-$route['backend/(:any)/our_service/(:any)/(:any)'] = 'backend/products/category/$2/$1/$3';
+// our_service
+$route['backend/(:any)/our_service'] = 'backend/Products/category/index/$1';
+$route['backend/(:any)/our_service/(:any)'] = 'backend/Products/category/$2/$1';
+$route['backend/(:any)/our_service/(:any)/(:any)'] = 'backend/Products/category/$2/$1/$3';
 
-$route['backend/(:any)/product'] = 'backend/products/product/index/$1';
-$route['backend/(:any)/product/(:any)'] = 'backend/products/product/$2/$1';
-$route['backend/(:any)/product/(:any)/(:any)'] = 'backend/products/product/$2/$1/$3';
+// product
+$route['backend/(:any)/product'] = 'backend/Products/product/index/$1';
+$route['backend/(:any)/product/(:any)'] = 'backend/Products/product/$2/$1';
+$route['backend/(:any)/product/(:any)/(:any)'] = 'backend/Products/product/$2/$1/$3';
 
-$route['backend/(:any)/product_image'] = 'backend/products/product_image/index/$1';
-$route['backend/(:any)/product_image/(:any)'] = 'backend/products/product_image/$2/$1';
-$route['backend/(:any)/product_image/(:any)/(:any)'] = 'backend/products/product_image/$2/$1/$3';
+$route['backend/(:any)/product_image'] = 'backend/Products/product_image/index/$1';
+$route['backend/(:any)/product_image/(:any)'] = 'backend/Products/product_image/$2/$1';
+$route['backend/(:any)/product_image/(:any)/(:any)'] = 'backend/Products/product_image/$2/$1/$3';
+
+$route['backend/(:any)/product_description'] = 'backend/Products/product_description/index/$1';
+$route['backend/(:any)/product_description/(:any)'] = 'backend/Products/product_description/$2/$1';
+$route['backend/(:any)/product_description/(:any)/(:any)'] = 'backend/Products/product_description/$2/$1/$3';
 
 $route['backend/(:any)/news'] = 'backend/news/index/$1';
 $route['backend/(:any)/news/(:any)'] = 'backend/news/$2/$1';
@@ -116,3 +122,5 @@ $route['backend/(:any)/why_choose_us/(:any)/(:any)'] = 'backend/why_choose_us/$2
 $route['backend/(:any)/water_treatment_plant'] = 'backend/water_treatment_plant/index/$1';
 $route['backend/(:any)/about'] = 'backend/about/index/$1';
 $route['backend/(:any)/about/(:any)'] = 'backend/about/$2/$1';
+
+$route['admin'] = 'backend/auth';

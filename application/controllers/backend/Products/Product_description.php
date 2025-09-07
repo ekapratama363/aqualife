@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Product_image extends CI_Controller {
+class Product_description extends CI_Controller {
 
     public function __construct()
     {
@@ -9,7 +9,7 @@ class Product_image extends CI_Controller {
         $this->load->helper(['url_helper', 'slug_helper', 'upload_file']);
         $this->load->library(['session', 'form_validation']);
 
-        $this->load->model(['Product_image_model']);
+        $this->load->model(['Product_description_model']);
         
 		if (!$this->session->userdata('is_login')){
 			redirect(base_url("backend/auth"));
@@ -20,7 +20,7 @@ class Product_image extends CI_Controller {
     {
         return [
             'js' => [
-                base_url('assets/hybrix/js/modules/product_image.js')
+                base_url('assets/hybrix/js/modules/product_description.js')
             ],
         ];
     }
@@ -29,7 +29,7 @@ class Product_image extends CI_Controller {
     {
         $data = $this->custom_assets();
         $data['slug'] = $slug;
-        $data['filePage'] = 'backend/pages/product_image/index';
+        $data['filePage'] = 'backend/pages/product_description/index';
         $this->load->view('backend/app', $data);
     }
 
@@ -37,7 +37,7 @@ class Product_image extends CI_Controller {
     {
         $data = $this->custom_assets();
         $data['slug'] = $slug;
-        $data['filePage'] = 'backend/pages/product_image/form';
+        $data['filePage'] = 'backend/pages/product_description/form';
         $this->load->view('backend/app', $data);
     }
 
@@ -46,8 +46,8 @@ class Product_image extends CI_Controller {
         $data = $this->custom_assets();
         $data['slug'] = $slug;
         $data['id'] = $id;
-        $data['filePage'] = 'backend/pages/product_image/form';
-        $data['data'] = $this->Product_image_model->get_by_id($id);
+        $data['filePage'] = 'backend/pages/product_description/form';
+        $data['data'] = $this->Product_description_model->get_by_id($id);
         $this->load->view('backend/app', $data);
     }
 
@@ -56,8 +56,7 @@ class Product_image extends CI_Controller {
         $this->form_validation->set_rules('title', 'title', 'required');
         $this->form_validation->set_rules('product_id', 'product_id', 'required');
         $this->form_validation->set_rules('description', 'description', 'required');
-        $this->form_validation->set_rules('title_category', 'title_category', 'required');
-        $this->form_validation->set_rules('subtitle_category', 'subtitle_category', 'required');
+        $this->form_validation->set_rules('position', 'position', 'required');
 
         $id = $this->input->post('id');
         $slug = $this->input->post('slug');
@@ -88,7 +87,7 @@ class Product_image extends CI_Controller {
             ];
 
 
-            $upload = upload_file($_FILES['single_image'], 'images/product_image');
+            $upload = upload_file($_FILES['single_image'], 'images/product_description');
 
             if (!$upload['status']) {
                 return $this->output
@@ -115,8 +114,7 @@ class Product_image extends CI_Controller {
 
         $data = [
             'title' => $this->input->post('title'),
-            'subtitle_category' => $this->input->post('subtitle_category'),
-            'title_category' => $this->input->post('title_category'),
+            'position' => $this->input->post('position'),
             'description' => $this->input->post('description'),
             'product_id' => $this->input->post('product_id'),
             'images' => $upload ? basename($upload['message']) : $this->input->post('image_name')
@@ -133,7 +131,7 @@ class Product_image extends CI_Controller {
                 ->set_output(json_encode([
                     'status' => true,
                     'message' => 'success',
-                    'redirect_url' => base_url("backend/$slug/product_image")
+                    'redirect_url' => base_url("backend/$slug/product_description")
                 ]));
 
         } catch (\Throwable $th) {
@@ -152,9 +150,9 @@ class Product_image extends CI_Controller {
     private function store_product($data, $id = null)
     {
         if ($id) {
-            $this->Product_image_model->update_by_id($id, $data);
+            $this->Product_description_model->update_by_id($id, $data);
         } else {
-            $id = $this->Product_image_model->create_data($data);
+            $id = $this->Product_description_model->create_data($data);
         }
 
         return $id;
@@ -177,33 +175,33 @@ class Product_image extends CI_Controller {
             $query['order'] = 'desc';
         }
 
-        $query['sort_field'] = 'product_images.id';
+        $query['sort_field'] = 'product_descriptions.id';
 
-        $totalFiltered = $this->Product_image_model->count_data($query)->total;
+        $totalFiltered = $this->Product_description_model->count_data($query)->total;
 
         $query['slug']  = $slug ?? 0;
         $query['start']  = $start ?? 0;
         $query['length'] = $length ?? 10;
     
-        $getData = $this->Product_image_model->get_data($query['length'], $query['start'], $query);
+        $getData = $this->Product_description_model->get_data($query['length'], $query['start'], $query);
         $no = $start;
         foreach($getData ?? [] as $key => $value) {        
             $no++;
 
             $action = "
-                <a href='".base_url()."backend/$slug/product_image/edit/".$value->id."' 
+                <a href='".base_url()."backend/$slug/product_description/edit/".$value->id."' 
                     class='btn btn-success' 
                     style='margin-right: 5px;font-size:10px;' title='Edit'>
                     <i class='bi bi-pencil'></i>
                 </a>
 
                 <a onclick='".'return confirm("'."Delete data $value->title?".'")'."' style='font-size:10px;'
-                    href='".base_url()."backend/$slug/product_image/delete/".$value->id."' class='btn btn-danger delete-list'>
+                    href='".base_url()."backend/$slug/product_description/delete/".$value->id."' class='btn btn-danger delete-list'>
                     <i class='bi bi-trash'></i>
                 </a>
             ";
 
-            $images = base_url("uploads/images/product_image/$value->images");
+            $images = base_url("uploads/images/product_description/$value->images");
             $getData[$key]->images = "<img src='$images' alt='$value->images' width='80' height='50'/>";
 
             $getData[$key]->no = $no;
@@ -223,12 +221,12 @@ class Product_image extends CI_Controller {
     public function delete($slug = '', $id = '')
     {
         try {
-            $this->Product_image_model->delete_by_id($id);
+            $this->Product_description_model->delete_by_id($id);
             $this->session->set_flashdata('success', 'Data berhasil dihapus');
         } catch (\Throwable $th) {
             $this->session->set_flashdata('failed', $th->getMessage());
         }
 
-        redirect(base_url("backend/$slug/product_image"));  
+        redirect(base_url("backend/$slug/product_description"));  
     }
 }

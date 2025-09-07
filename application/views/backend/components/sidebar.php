@@ -266,6 +266,12 @@
                                 </li>
 
                                 <li class="nav-item">
+                                    <a href="<?= base_url('backend/ro_drinking_water/product_description') ?>" 
+                                        class="nav-link <?= $seg2 == 'ro_drinking_water' && $seg3 == 'product_description' ? 'active' : '' ?>" 
+                                        data-key="t-alerts">Product description</a>
+                                </li>
+
+                                <li class="nav-item">
                                     <a href="<?= base_url('backend/ro_drinking_water/why_choose_us') ?>" 
                                         class="nav-link <?= $seg2 == 'ro_drinking_water' && $seg3 == 'why_choose_us' ? 'active' : '' ?>" 
                                         data-key="t-alerts">Why choose us</a>

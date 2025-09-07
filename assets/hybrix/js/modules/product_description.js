@@ -6,6 +6,8 @@ $(document).ready(function () {
 	table();
 
 	products("product_id", "", "Select Products", "");
+
+	CKEDITOR.replace("description"); // 'editor1' is the ID of your textarea
 });
 
 function products(
@@ -50,14 +52,13 @@ function table() {
 		serverSide: true,
 		pageLength: 10,
 		ajax: {
-			url: `${beBaseUrl}/products/product_image/lists?slug=${slug}`,
+			url: `${beBaseUrl}/products/product_description/lists?slug=${slug}`,
 			dataType: "json",
 			type: "POST",
 		},
 		columns: [
 			{ data: "no" },
-			{ data: "title_category" },
-			{ data: "subtitle_category" },
+			{ data: "position" },
 			{ data: "title" },
 			{ data: "p_name" },
 			{ data: "description" },
@@ -75,11 +76,15 @@ function submitData() {
 	$("#error-message").html("");
 	$("#success-message").html("");
 
+	// Update the textarea with CKEditor content
+	let editorData = CKEDITOR.instances["description"].getData(); // Replace 'ckeditor' with your CKEditor ID
+	$("#description").val(editorData); // Update the textarea value
+
 	let form = $("#form-data")[0]; // Ambil elemen form
 	let formData = new FormData(form); // Buat objek FormData
 
 	$.ajax({
-		url: `${beBaseUrl}/products/product_image/update_or_create`,
+		url: `${beBaseUrl}/products/product_description/update_or_create`,
 		type: "POST",
 		data: formData,
 		dataType: "json",

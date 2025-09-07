@@ -17,8 +17,7 @@
                     <thead>
                         <tr>
                             <th style="width: 5%">No</th>
-                            <th>Title Category</th>
-                            <th>Subtitle Category</th>
+                            <th>Position</th>
                             <th>Title</th>
                             <th>Product</th>
                             <th>Description</th>

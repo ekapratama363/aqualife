@@ -10,22 +10,12 @@
 
             <div class="form-group">
               <div class="mb-3">
-                <label for="title_category">Title Category</label>
-                <input type="text" class="form-control" id="title_category" name="title_category"
-                  value="<?= $data->title_category ?? null ?>">
-                <b class="text-danger" id="title_category_error"></b>
+                <label for="position">Position</label>
+                <input type="number" class="form-control" id="position" name="position"
+                  value="<?= $data->position ?? null ?>">
+                <b class="text-danger" id="position_error"></b>
               </div>
             </div>
-            
-            <div class="form-group">
-              <div class="mb-3">
-                <label for="subtitle_category">Subtitle Category</label>
-                <input type="text" class="form-control" id="subtitle_category" name="subtitle_category"
-                  value="<?= $data->subtitle_category ?? null ?>">
-                <b class="text-danger" id="subtitle_category_error"></b>
-              </div>
-            </div>
-
 
             <div class="form-group">
               <div class="mb-3">
@@ -71,7 +61,7 @@
             <div class="form-group">
               <div class="mb-3 row">
                 <div class="col-md-6">
-                  <img src="<?= base_url("uploads/images/product_image/$data->images") ?>" 
+                  <img src="<?= base_url("uploads/images/product_description/$data->images") ?>" 
                     alt="<?= $data->images ?>"
                     width="300"
                     height="150">
@@ -85,8 +75,7 @@
             <div class="mb-3 row">
               <div class="col-md-6">
                 <label for="description">Description</label>
-                <input type="text" class="form-control" id="description" name="description"
-                  value="<?= $data->description ?? null ?>">
+                <textarea class="form-control" id="description" name="description"><?= $data->description ?? null ?></textarea>
                 <b class="text-danger" id="description_error"></b>
               </div>
           </div>
