@@ -12,7 +12,8 @@
               <div class="mb-3">
                 <label for="position">Position</label>
                 <input type="number" class="form-control" id="position" name="position"
-                  value="<?= $data->position ?? null ?>">
+                  value="<?= $data->position ?? $position ?>" readonly>
+                  
                 <b class="text-danger" id="position_error"></b>
               </div>
             </div>
@@ -85,7 +86,7 @@
                 <i class="mdi mdi-zip-disk"></i> Submit
               </button>
 
-              <a href="<?= base_url() . $this->uri->segment(1) . '/' . $this->uri->segment(2) . '/' . $this->uri->segment(3); ?>"><button type="button" 
+              <a href="<?= base_url() . $this->uri->segment(1) . '/' . $this->uri->segment(2) . '/' . $this->uri->segment(3) . '/' . $this->uri->segment(4); ?>"><button type="button" 
                   class="btn btn-light"><i class="mdi mdi-close"></i> Back</button></a>
           </div>
         </div>

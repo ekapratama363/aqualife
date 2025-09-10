@@ -25,25 +25,28 @@ class Product_description extends CI_Controller {
         ];
     }
     
-    public function index($slug = '')
+    public function index($slug = '', $position = '')
     {
         $data = $this->custom_assets();
+        $data['position'] = $position;
         $data['slug'] = $slug;
         $data['filePage'] = 'backend/pages/product_description/index';
         $this->load->view('backend/app', $data);
     }
 
-    public function create($slug = '')
+    public function create($slug = '', $position = '')
     {
         $data = $this->custom_assets();
+        $data['position'] = $position;
         $data['slug'] = $slug;
         $data['filePage'] = 'backend/pages/product_description/form';
         $this->load->view('backend/app', $data);
     }
 
-    public function edit($slug = '', $id = null)
+    public function edit($slug = '', $position = '', $id = null)
     {
         $data = $this->custom_assets();
+        $data['position'] = $position;
         $data['slug'] = $slug;
         $data['id'] = $id;
         $data['filePage'] = 'backend/pages/product_description/form';
@@ -60,6 +63,7 @@ class Product_description extends CI_Controller {
 
         $id = $this->input->post('id');
         $slug = $this->input->post('slug');
+        $position = $this->input->post('position');
 
         if ($this->form_validation->run() == FALSE) {
             return $this->output
@@ -131,7 +135,7 @@ class Product_description extends CI_Controller {
                 ->set_output(json_encode([
                     'status' => true,
                     'message' => 'success',
-                    'redirect_url' => base_url("backend/$slug/product_description")
+                    'redirect_url' => base_url("backend/$slug/product_description/$position")
                 ]));
 
         } catch (\Throwable $th) {
@@ -158,12 +162,11 @@ class Product_description extends CI_Controller {
         return $id;
     }
 
-    public function lists()
+    public function lists($slug = '', $position = '')
     {
         $draw   = $this->input->post('draw');
         $start  = $this->input->post('start');
         $length = $this->input->post('length');
-        $slug = $this->input->get('slug');
 
         $search = strtolower($this->input->post('search')['value']);
         $orderColumn = isset($this->input->post('order')[0]['column']) ? $this->input->post('order')[0]['column'] : '';
@@ -175,6 +178,7 @@ class Product_description extends CI_Controller {
             $query['order'] = 'desc';
         }
 
+        $query['position'] = $position;
         $query['sort_field'] = 'product_descriptions.id';
 
         $totalFiltered = $this->Product_description_model->count_data($query)->total;
@@ -189,14 +193,14 @@ class Product_description extends CI_Controller {
             $no++;
 
             $action = "
-                <a href='".base_url()."backend/$slug/product_description/edit/".$value->id."' 
+                <a href='".base_url()."backend/$slug/product_description/$position/edit/".$value->id."' 
                     class='btn btn-success' 
                     style='margin-right: 5px;font-size:10px;' title='Edit'>
                     <i class='bi bi-pencil'></i>
                 </a>
 
                 <a onclick='".'return confirm("'."Delete data $value->title?".'")'."' style='font-size:10px;'
-                    href='".base_url()."backend/$slug/product_description/delete/".$value->id."' class='btn btn-danger delete-list'>
+                    href='".base_url()."backend/$slug/product_description/$position/delete/".$value->id."' class='btn btn-danger delete-list'>
                     <i class='bi bi-trash'></i>
                 </a>
             ";
@@ -218,7 +222,7 @@ class Product_description extends CI_Controller {
         echo json_encode($json_data);
     }
 
-    public function delete($slug = '', $id = '')
+    public function delete($slug = '', $position = '', $id = '')
     {
         try {
             $this->Product_description_model->delete_by_id($id);
@@ -227,6 +231,6 @@ class Product_description extends CI_Controller {
             $this->session->set_flashdata('failed', $th->getMessage());
         }
 
-        redirect(base_url("backend/$slug/product_description"));  
+        redirect(base_url("backend/$slug/product_description/$position"));  
     }
 }

@@ -58,6 +58,7 @@ class Product_image extends CI_Controller {
         $this->form_validation->set_rules('description', 'description', 'required');
         $this->form_validation->set_rules('title_category', 'title_category', 'required');
         $this->form_validation->set_rules('subtitle_category', 'subtitle_category', 'required');
+        $this->form_validation->set_rules('position', 'position', 'required');
 
         $id = $this->input->post('id');
         $slug = $this->input->post('slug');
@@ -119,6 +120,7 @@ class Product_image extends CI_Controller {
             'title_category' => $this->input->post('title_category'),
             'description' => $this->input->post('description'),
             'product_id' => $this->input->post('product_id'),
+            'position' => $this->input->post('position'),
             'images' => $upload ? basename($upload['message']) : $this->input->post('image_name')
         ];
 

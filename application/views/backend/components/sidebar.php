@@ -1,6 +1,7 @@
 <?php 
     $seg2 = $this->uri->segment(2);
     $seg3 = $this->uri->segment(3);
+    $seg4 = $this->uri->segment(4);
 ?>
 
 <div id="scrollbar">
@@ -265,10 +266,71 @@
                                         data-key="t-alerts">Product image</a>
                                 </li>
 
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <a href="<?= base_url('backend/ro_drinking_water/product_description') ?>" 
                                         class="nav-link <?= $seg2 == 'ro_drinking_water' && $seg3 == 'product_description' ? 'active' : '' ?>" 
                                         data-key="t-alerts">Product description</a>
+                                </li> -->
+
+                                <li class="nav-item">
+                                    <a href="#sidebarAccount" class="nav-link <?= $seg3 == 'product_description' ? 'active' : '' ?>" 
+                                        data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAccount" data-key="t-level-1.2">
+                                        Product description
+                                    </a>
+                                    <div class="collapse menu-dropdown <?= $seg3 == 'product_description' ? 'show' : '' ?>" id="sidebarAccount">
+                                        <ul class="nav nav-sm flex-column">
+                                            <li class="nav-item">
+                                                <a href="<?= base_url('backend/ro_drinking_water/product_description/1') ?>" 
+                                                    class="nav-link <?= $seg2 == 'ro_drinking_water' && $seg3 == 'product_description' && $seg4 == '1' ? 'active' : '' ?>" 
+                                                    data-key="1">Description 1</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="<?= base_url('backend/ro_drinking_water/product_description/2') ?>" 
+                                                    class="nav-link <?= $seg2 == 'ro_drinking_water' && $seg3 == 'product_description' && $seg4 == '2' ? 'active' : '' ?>" 
+                                                    data-key="1">Description 2</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="<?= base_url('backend/ro_drinking_water/product_description/3') ?>" 
+                                                    class="nav-link <?= $seg2 == 'ro_drinking_water' && $seg3 == 'product_description' && $seg4 == '3' ? 'active' : '' ?>" 
+                                                    data-key="1">Description 3</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="<?= base_url('backend/ro_drinking_water/product_description/4') ?>" 
+                                                    class="nav-link <?= $seg2 == 'ro_drinking_water' && $seg3 == 'product_description' && $seg4 == '4' ? 'active' : '' ?>" 
+                                                    data-key="1">Description 4</a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a href="<?= base_url('backend/ro_drinking_water/product_description/5') ?>" 
+                                                    class="nav-link <?= $seg2 == 'ro_drinking_water' && $seg3 == 'product_description' && $seg4 == '5' ? 'active' : '' ?>" 
+                                                    data-key="1">Description 5</a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a href="<?= base_url('backend/ro_drinking_water/product_description/6') ?>" 
+                                                    class="nav-link <?= $seg2 == 'ro_drinking_water' && $seg3 == 'product_description' && $seg4 == '6' ? 'active' : '' ?>" 
+                                                    data-key="1">Description 6</a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a href="<?= base_url('backend/ro_drinking_water/product_description/7') ?>" 
+                                                    class="nav-link <?= $seg2 == 'ro_drinking_water' && $seg3 == 'product_description' && $seg4 == '7' ? 'active' : '' ?>" 
+                                                    data-key="1">Description 7</a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a href="<?= base_url('backend/ro_drinking_water/product_description/8') ?>" 
+                                                    class="nav-link <?= $seg2 == 'ro_drinking_water' && $seg3 == 'product_description' && $seg4 == '8' ? 'active' : '' ?>" 
+                                                    data-key="1">Description 8</a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a href="<?= base_url('backend/ro_drinking_water/product_description/9') ?>" 
+                                                    class="nav-link <?= $seg2 == 'ro_drinking_water' && $seg3 == 'product_description' && $seg4 == '9' ? 'active' : '' ?>" 
+                                                    data-key="1">Contact us image</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </li>
 
                                 <li class="nav-item">

@@ -4,8 +4,9 @@
             <form id="formPrintOrMutlipleDelete" action="#" method="post">   
                 <div class="grid-margin">
                     <!-- for type submit delete or print -->
+                    <input type="hidden" name="position" id="position" value="<?= $position ?>">
                     <input type="hidden" name="slug" id="slug" value="<?= $slug ?>">
-                    <a href="<?= base_url() . $this->uri->segment(1) . '/' . $this->uri->segment(2) . '/' . $this->uri->segment(3);?>/create" 
+                    <a href="<?= base_url() . $this->uri->segment(1) . '/' . $this->uri->segment(2) . '/' . $this->uri->segment(3) . '/' . $this->uri->segment(4);?>/create" 
                         class="btn btn-primary" title="Create">
                         <i class="bi bi-plus"></i> Add</a>
                 </div>

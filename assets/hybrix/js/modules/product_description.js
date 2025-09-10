@@ -46,13 +46,14 @@ function products(
 }
 
 function table() {
+	let position = $("#position").val();
 	let slug = $("#slug").val();
 	$("#myTable").dataTable({
 		processing: true,
 		serverSide: true,
 		pageLength: 10,
 		ajax: {
-			url: `${beBaseUrl}/products/product_description/lists?slug=${slug}`,
+			url: `${beBaseUrl}/${slug}/product_description/${position}/lists`,
 			dataType: "json",
 			type: "POST",
 		},

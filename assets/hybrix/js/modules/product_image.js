@@ -58,6 +58,7 @@ function table() {
 			{ data: "no" },
 			{ data: "title_category" },
 			{ data: "subtitle_category" },
+			{ data: "position" },
 			{ data: "title" },
 			{ data: "p_name" },
 			{ data: "description" },

@@ -91,6 +91,23 @@
               </div>
           </div>
 
+          <div class="form-group">
+            <div class="mb-3 row">
+              <div class="col-md-6">
+                <label for="position">Position</label>
+                
+                <select name="position" class="form-control">
+                  <option value="TOP" <?= isset($data->position) && $data->position == 'TOP' ? 'selected' : '' ?>>TOP</option>
+                  <option value="LEFT" <?= isset($data->position) && $data->position == 'LEFT' ? 'selected' : '' ?>>LEFT</option>
+                  <option value="RIGHT" <?= isset($data->position) && $data->position == 'RIGHT' ? 'selected' : '' ?>>RIGHT</option>
+                  <!-- <option value="BOTTOM" <?= isset($data->position) && $data->position == 'BOTTOM' ? 'selected' : '' ?>>BOTTOM</option> -->
+                  <option value="TOP LEFT" <?= isset($data->position) && $data->position == 'TOP LEFT' ? 'selected' : '' ?>>TOP LEFT</option>
+                  <option value="TOP RIGHT" <?= isset($data->position) && $data->position == 'TOP RIGHT' ? 'selected' : '' ?>>TOP RIGHT</option>
+                </select>
+                <b class="text-danger" id="position_error"></b>
+              </div>
+          </div>
+
           <div class="col-md-12">
               <button type="button" class="btn btn-primary mr-2" id="btn-submit">
                 <i class="mdi mdi-zip-disk"></i> Submit

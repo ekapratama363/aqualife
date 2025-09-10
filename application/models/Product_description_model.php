@@ -12,7 +12,13 @@ class Product_description_model extends CI_Model
         $match = isset($data['search']) ? $data['search'] : '';
         
         $query = $this->db
-            ->select($select)
+            ->select($select);
+
+        if (isset($data['position'])) {
+            $query->where('position', $data['position']);
+        }
+
+        $query
             ->join('products p', 'p.id = product_descriptions.product_id', 'left')
             ->where('(product_descriptions.title LIKE \'%'.$match.'%\' 
                 or product_descriptions.description LIKE \'%'.$match.'%\')');
