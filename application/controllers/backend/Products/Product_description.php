@@ -118,6 +118,7 @@ class Product_description extends CI_Controller {
 
         $data = [
             'title' => $this->input->post('title'),
+            'subtitle' => $this->input->post('subtitle'),
             'position' => $this->input->post('position'),
             'description' => $this->input->post('description'),
             'product_id' => $this->input->post('product_id'),

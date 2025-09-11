@@ -18,8 +18,8 @@
                     <thead>
                         <tr>
                             <th style="width: 5%">No</th>
-                            <th>Position</th>
                             <th>Title</th>
+                            <th>Subtitle</th>
                             <th>Product</th>
                             <th>Description</th>
                             <th>Image</th>

@@ -8,7 +8,7 @@
         <div class="row">
           <div class="col-md-6">
 
-            <div class="form-group">
+            <div class="form-group" style="display: none">
               <div class="mb-3">
                 <label for="position">Position</label>
                 <input type="number" class="form-control" id="position" name="position"
@@ -31,6 +31,15 @@
                 <input type="text" class="form-control" id="title" name="title"
                   value="<?= $data->title ?? null ?>">
                 <b class="text-danger" id="title_error"></b>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="mb-3">
+                <label for="subtitle">Subtitle</label>
+                <input type="text" class="form-control" id="subtitle" name="subtitle"
+                  value="<?= $data->subtitle ?? null ?>">
+                <b class="text-danger" id="subtitle_error"></b>
               </div>
             </div>
 

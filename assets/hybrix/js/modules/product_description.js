@@ -20,13 +20,14 @@ function products(
 		return;
 	}
 
+	let slug = $("#slug").val();
 	$(`#${id}`).select2({
 		width: "100%",
 		placeholder: placeholder,
 		allowClear: true,
 		multiple: false,
 		ajax: {
-			url: `${baseUrl}/product/list`,
+			url: `${baseUrl}/product/list?slug=${slug}`,
 			dataType: "json",
 			type: "GET",
 			delay: 250,
@@ -59,8 +60,8 @@ function table() {
 		},
 		columns: [
 			{ data: "no" },
-			{ data: "position" },
 			{ data: "title" },
+			{ data: "subtitle" },
 			{ data: "p_name" },
 			{ data: "description" },
 			{ data: "images" },
