@@ -17,7 +17,7 @@ class Product_model extends CI_Model
             ->where('(products.name LIKE \'%'.$match.'%\' 
                 or link LIKE \'%'.$match.'%\')');
 
-        if (isset($data['slug'])) {
+        if (isset($data['slug']) && $data['slug'] != '') {
             $slug = $data['slug'];
             $query->where("products.category_id = (SELECT id FROM categories WHERE slug = '$slug') ");
         }
