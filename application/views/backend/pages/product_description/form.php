@@ -90,6 +90,15 @@
               </div>
           </div>
 
+          <div class="form-group">
+            <div class="mb-3">
+              <label for="link">Link</label>
+              <input type="text" class="form-control" id="link" name="link"
+                value="<?= $data->link ?? null ?>">
+              <b class="text-danger" id="link_error"></b>
+            </div>
+          </div>
+
           <div class="col-md-12">
               <button type="button" class="btn btn-primary mr-2" id="btn-submit">
                 <i class="mdi mdi-zip-disk"></i> Submit

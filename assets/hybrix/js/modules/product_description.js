@@ -65,6 +65,7 @@ function table() {
 			{ data: "p_name" },
 			{ data: "description" },
 			{ data: "images" },
+			{ data: "link" },
 			{ data: "action" },
 		],
 		columnDefs: [{ orderable: false, targets: [0] }],

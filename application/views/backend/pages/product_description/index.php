@@ -23,6 +23,7 @@
                             <th>Product</th>
                             <th>Description</th>
                             <th>Image</th>
+                            <th>Link</th>
                             <th>Action</th>
                         </tr>
                     </thead>

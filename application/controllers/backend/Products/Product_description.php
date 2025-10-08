@@ -121,6 +121,7 @@ class Product_description extends CI_Controller {
             'subtitle' => $this->input->post('subtitle'),
             'position' => $this->input->post('position'),
             'description' => $this->input->post('description'),
+            'link' => $this->input->post('link'),
             'product_id' => $this->input->post('product_id'),
             'images' => $upload ? basename($upload['message']) : $this->input->post('image_name')
         ];
