@@ -37,7 +37,7 @@
                 <label for="password">Password</label>
 
                 <input type="text" class="form-control" id="password" name="password"
-                  value="<?= $data->password ?? null ?>">
+                  value="">
                 <b class="text-danger" id="password_error"></b>
               </div>
             </div>
@@ -47,7 +47,7 @@
                 <label for="password_confirm">Password Confirmation</label>
 
                 <input type="text" class="form-control" id="password_confirm" name="password_confirm"
-                  value="<?= $data->password_confirm ?? null ?>">
+                  value="">
                 <b class="text-danger" id="password_confirm_error"></b>
               </div>
             </div>

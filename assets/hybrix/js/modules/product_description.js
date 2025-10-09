@@ -79,6 +79,9 @@ function submitData() {
 	$("#error-message").html("");
 	$("#success-message").html("");
 
+	let position = $("#position").val();
+	let slug = $("#slug").val();
+	
 	// Update the textarea with CKEditor content
 	let editorData = CKEDITOR.instances["description"].getData(); // Replace 'ckeditor' with your CKEditor ID
 	$("#description").val(editorData); // Update the textarea value
@@ -87,7 +90,7 @@ function submitData() {
 	let formData = new FormData(form); // Buat objek FormData
 
 	$.ajax({
-		url: `${beBaseUrl}/products/product_description/update_or_create`,
+		url: `${beBaseUrl}/${slug}/product_description/${position}/update_or_create`,
 		type: "POST",
 		data: formData,
 		dataType: "json",

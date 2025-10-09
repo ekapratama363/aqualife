@@ -93,9 +93,8 @@ $route['backend/(:any)/product_description/(:num)/delete/(:num)']
     = 'backend/Products/Product_description/delete/$1/$2/$3';
 
 // UPDATE
-$route['backend/(:any)/product_description/(:num)/update/(:num)']
-    = 'backend/Products/Product_description/update/$1/$2/$3';
-
+$route['backend/(:any)/product_description/(:num)/update_or_create']
+    = 'backend/Products/Product_description/update_or_create/$1/$2';
 
 // $route['backend/(:any)/product_description'] = 'backend/Products/product_description/index/$1';
 // $route['backend/(:any)/product_description/(:any)'] = 'backend/Products/product_description/$2/$1';

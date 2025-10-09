@@ -15,7 +15,7 @@ function table() {
 		serverSide: true,
 		pageLength: 10,
 		ajax: {
-			url: `${beBaseUrl}/products/category/lists?slug=${slug}`,
+			url: `${beBaseUrl}/home/our_service/lists?slug=${slug}`,
 			dataType: "json",
 			type: "POST",
 		},
@@ -41,7 +41,7 @@ function submitData() {
 	let formData = new FormData(form); // Buat objek FormData
 
 	$.ajax({
-		url: `${beBaseUrl}/products/category/update_or_create`,
+		url: `${beBaseUrl}/home/our_service/update_or_create`,
 		type: "POST",
 		data: formData,
 		dataType: "json",
