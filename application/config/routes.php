@@ -125,6 +125,10 @@ $route['backend/(:any)/consultation'] = 'backend/order/index/$1';
 $route['backend/(:any)/consultation/(:any)'] = 'backend/order/$2/$1';
 $route['backend/(:any)/consultation/(:any)/(:any)'] = 'backend/order/$2/$1/$3';
 
+$route['backend/(:any)/contact_us'] = 'backend/contact_us/index/$1';
+$route['backend/(:any)/contact_us/(:any)'] = 'backend/contact_us/$2/$1';
+$route['backend/(:any)/contact_us/(:any)/(:any)'] = 'backend/contact_us/$2/$1/$3';
+
 $route['backend/(:any)/subscribe'] = 'backend/subscribe/index/$1';
 $route['backend/(:any)/subscribe/(:any)'] = 'backend/subscribe/$2/$1';
 $route['backend/(:any)/subscribe/(:any)/(:any)'] = 'backend/subscribe/$2/$1/$3';

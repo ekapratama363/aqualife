@@ -57,6 +57,11 @@
                                         data-key="t-alerts">Consultation</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a href="<?= base_url('backend/home/contact_us') ?>" 
+                                        class="nav-link <?= $seg2 == 'home' && $seg3 == 'contact_us' ? 'active' : '' ?>" 
+                                        data-key="t-alerts">Contact us</a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="<?= base_url('backend/home/subscribe') ?>" 
                                         class="nav-link <?= $seg2 == 'home' && $seg3 == 'subscribe' ? 'active' : '' ?>" 
                                         data-key="t-alerts">Subscribed</a>
