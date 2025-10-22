@@ -20,6 +20,9 @@
                             <th>Title Category</th>
                             <th>Subtitle Category</th>
                             <th>Position</th>
+                            <th>Position 2</th>
+                            <th>Translate</th>
+                            <th>Padding Top</th>
                             <th>Title</th>
                             <th>Product</th>
                             <th>Description</th>

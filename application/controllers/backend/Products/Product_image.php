@@ -59,6 +59,9 @@ class Product_image extends CI_Controller {
         $this->form_validation->set_rules('title_category', 'title_category', 'required');
         $this->form_validation->set_rules('subtitle_category', 'subtitle_category', 'required');
         $this->form_validation->set_rules('position', 'position', 'required');
+        $this->form_validation->set_rules('position2', 'position2', 'required');
+        $this->form_validation->set_rules('translate', 'translate', 'required');
+        $this->form_validation->set_rules('padding_top', 'padding_top', 'required');
 
         $id = $this->input->post('id');
         $slug = $this->input->post('slug');
@@ -121,7 +124,11 @@ class Product_image extends CI_Controller {
             'description' => $this->input->post('description'),
             'product_id' => $this->input->post('product_id'),
             'position' => $this->input->post('position'),
-            'images' => $upload ? basename($upload['message']) : $this->input->post('image_name')
+            'images' => $upload ? basename($upload['message']) : $this->input->post('image_name'),
+
+            'position2' => $this->input->post('position2'),
+            'translate' => $this->input->post('translate'),
+            'padding_top' => $this->input->post('padding_top'),
         ];
 
         

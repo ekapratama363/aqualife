@@ -97,14 +97,56 @@
                 <label for="position">Position</label>
                 
                 <select name="position" class="form-control">
-                  <option value="TOP" <?= isset($data->position) && $data->position == 'TOP' ? 'selected' : '' ?>>TOP</option>
-                  <option value="LEFT" <?= isset($data->position) && $data->position == 'LEFT' ? 'selected' : '' ?>>LEFT</option>
-                  <option value="RIGHT" <?= isset($data->position) && $data->position == 'RIGHT' ? 'selected' : '' ?>>RIGHT</option>
-                  <!-- <option value="BOTTOM" <?= isset($data->position) && $data->position == 'BOTTOM' ? 'selected' : '' ?>>BOTTOM</option> -->
-                  <option value="TOP LEFT" <?= isset($data->position) && $data->position == 'TOP LEFT' ? 'selected' : '' ?>>TOP LEFT</option>
-                  <option value="TOP RIGHT" <?= isset($data->position) && $data->position == 'TOP RIGHT' ? 'selected' : '' ?>>TOP RIGHT</option>
+                  <option value="">-Pilih-</option>
+                  <option value="left" <?= isset($data->position) && $data->position == 'left' ? 'selected' : '' ?>>left</option>
+                  <option value="right" <?= isset($data->position) && $data->position == 'right' ? 'selected' : '' ?>>right</option>
+                  <option value="center" <?= isset($data->position) && $data->position == 'center' ? 'selected' : '' ?>>center</option>
                 </select>
                 <b class="text-danger" id="position_error"></b>
+              </div>
+          </div>
+
+          <div class="form-group">
+            <div class="mb-3 row">
+              <div class="col-md-6">
+                <label for="position2">Position 2</label>
+                
+                <select name="position2" class="form-control">
+                  <option value="">-Pilih-</option>
+                  <option value="left-8" <?= isset($data->position2) && $data->position2 == 'left-8' ? 'selected' : '' ?>>left-8</option>
+                  <option value="left-1/2" <?= isset($data->position2) && $data->position2 == 'left-1/2' ? 'selected' : '' ?>>left-1/2</option>
+                  <option value="right-8" <?= isset($data->position2) && $data->position2 == 'right-8' ? 'selected' : '' ?>>right-8</option>
+                  <option value="right-1/2" <?= isset($data->position2) && $data->position2 == 'right-1/2' ? 'selected' : '' ?>>right-1/2</option>
+                </select>
+                <b class="text-danger" id="position2_error"></b>
+              </div>
+          </div>
+
+          <div class="form-group">
+            <div class="mb-3 row">
+              <div class="col-md-6">
+                <label for="translate">Translate</label>
+                
+                <select name="translate" class="form-control">
+                  <option value="">-Pilih-</option>
+                  <option value="x" <?= isset($data->translate) && $data->translate == 'x' ? 'selected' : '' ?>>x</option>
+                  <option value="y" <?= isset($data->translate) && $data->translate == 'y' ? 'selected' : '' ?>>y</option>
+                </select>
+                <b class="text-danger" id="translate_error"></b>
+              </div>
+          </div>
+
+          <div class="form-group">
+            <div class="mb-3 row">
+              <div class="col-md-6">
+                <label for="padding_top">Padding Top</label>
+                
+                <select name="padding_top" class="form-control">
+                  <option value="">-Pilih-</option>
+                  <option value="8" <?= isset($data->padding_top) && $data->padding_top == '8' ? 'selected' : '' ?>>8</option>
+                  <option value="1/2" <?= isset($data->padding_top) && $data->padding_top == '1/2' ? 'selected' : '' ?>>1/2</option>
+                </select>
+                <b class="text-danger" id="padding_top_error"></b>
               </div>
           </div>
 
