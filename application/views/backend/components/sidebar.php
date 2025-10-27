@@ -254,6 +254,12 @@
                                 </li>
 
                                 <li class="nav-item">
+                                    <a href="<?= base_url('backend/ro_drinking_water/did_you_know_point') ?>" 
+                                        class="nav-link <?= $seg2 == 'ro_drinking_water' && $seg3 == 'did_you_know_point' ? 'active' : '' ?>" 
+                                        data-key="t-alerts">Did you know point</a>
+                                </li>
+
+                                <li class="nav-item">
                                     <a href="<?= base_url('backend/ro_drinking_water/benefit') ?>" 
                                         class="nav-link <?= $seg2 == 'ro_drinking_water' && $seg3 == 'benefit' ? 'active' : '' ?>" 
                                         data-key="t-alerts">Benefit</a>
