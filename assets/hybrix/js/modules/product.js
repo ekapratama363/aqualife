@@ -7,27 +7,34 @@ $(document).ready(function () {
 
 	categories("category_id", "", "Select Categories", "");
 
-	var x = 1;
+	
+	// Cari index terbesar dari input yang sudah ada
+	var x = $(".form-control[name^='key_field_']").length - 1;
+
+	// Saat tambah input baru
 	$(".addDetails").click(function () {
-		x++;
+		x++; // lanjut dari index terakhir
 		$(".inputDetails").append(`
-			<div class="input-group mb-3">
-				<input
-					class="form-control"
-					name="key_field_${x}"
-					type="text"
-					placeholder="ex: Price"
-				/>
-				<input
-					class="form-control"
-					name="value_field_${x}"
-					type="text"
-					placeholder="ex: 200000"
-				/>
-				<div class="input-group-append">
-		          <button type="button" class="removeDetails btn btn-danger" onclick="handleRemove(this, ${x})"><i class="bi bi-x"></i></button>
-				</div>
-			</div>`);
+    <div class="input-group mb-3">
+      <input
+        class="form-control"
+        name="key_field_${x}"
+        type="text"
+        placeholder="ex: Price"
+      />
+      <input
+        class="form-control"
+        name="value_field_${x}"
+        type="text"
+        placeholder="ex: 200000"
+      />
+      <div class="input-group-append">
+        <button type="button" class="removeDetails btn btn-danger" onclick="handleRemove(this, ${x})">
+          <i class="bi bi-x"></i>
+        </button>
+      </div>
+    </div>
+  `);
 	});
 });
 
@@ -114,7 +121,7 @@ function submitData() {
 		contentType: false, // Don't set content type
 		success: function (response) {
 			if (response.status) {
-				window.location.href = response.redirect_url;
+				// window.location.href = response.redirect_url;
 			}
 
 			$("#btn-submit").prop("disabled", false);

@@ -170,13 +170,13 @@ class Product extends CI_Controller {
             $keyField = $postData["key_field_$index"] ?? null;
             $valueField = $postData["value_field_$index"] ?? null;
 
-            if (!empty($keyField) && $valueField !== null && $valueField !== '') {
+            // if (!empty($keyField) && $valueField !== null && $valueField !== '') {
                 $combined[] = [
                     'product_id'   => $productId,
                     'key_field'    => $keyField,     // sesuai nama kolom di tabel
                     'value_field'  => $valueField    // sesuai nama kolom di tabel
                 ];
-            }
+            // }
         }
 
         return $combined;
